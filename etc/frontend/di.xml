@@ -3,6 +3,9 @@
     <type name="Magento\Customer\Model\Session">
         <plugin name="softaware_customerapproval" type="Softaware\CustomerApproval\Plugin\Frontend\CustomerSessionPlugin"/>
     </type>
+    <type name="Magento\Customer\Controller\Account\Confirm">
+        <plugin name="softaware_customerapproval" type="Softaware\CustomerApproval\Plugin\Frontend\ConfirmPlugin"/>
+    </type>
     <type name="Magento\Customer\Controller\Account\CreatePost">
         <plugin name="softaware_customerapproval" type="Softaware\CustomerApproval\Plugin\Frontend\CreatePostPlugin"/>
     </type>

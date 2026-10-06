@@ -17,6 +17,7 @@ use Magento\Framework\Message\MessageInterface;
 use Magento\Framework\UrlInterface;
 use Magento\Store\Model\StoreManagerInterface;
 use Softaware\CustomerApproval\Model\Config;
+use Softaware\CustomerApproval\Model\LoginGuard;
 use Softaware\CustomerApproval\Model\RegistrationState;
 
 /**
@@ -33,7 +34,8 @@ class CreatePostPlugin
         private readonly RedirectFactory $redirectFactory,
         private readonly UrlInterface $url,
         private readonly Config $config,
-        private readonly StoreManagerInterface $storeManager
+        private readonly StoreManagerInterface $storeManager,
+        private readonly LoginGuard $loginGuard
     ) {
     }
 
@@ -49,11 +51,10 @@ class CreatePostPlugin
         if (!$needsConfirmation) {
             $this->removeSuccessMessages();
         }
-        $message = $this->config->getRegistrationMessage($storeId) ?: (string)__(
-            'Thank you for registering. Your account needs to be approved before you can sign in. '
-            . 'We will email you as soon as it has been reviewed.'
-        );
-        $this->messageManager->addNoticeMessage($message);
+        if (!$this->registrationState->isMessageShown()) {
+            $this->messageManager->addNoticeMessage($this->loginGuard->getRegistrationMessage());
+            $this->registrationState->setMessageShown();
+        }
         if ($needsConfirmation) {
             return $result;
         }

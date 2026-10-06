@@ -13,6 +13,7 @@ use Magento\Customer\Api\Data\CustomerInterface;
 use Magento\Customer\Api\SessionCleanerInterface;
 use Magento\Customer\Model\Customer;
 use Magento\Customer\Model\CustomerRegistry;
+use Magento\Framework\App\ResourceConnection;
 use Magento\Framework\Event\ManagerInterface as EventManager;
 use Magento\Framework\Indexer\IndexerRegistry;
 use Magento\Integration\Api\CustomerTokenServiceInterface;
@@ -32,7 +33,8 @@ class ApprovalManagement implements ApprovalManagementInterface
         private readonly SessionCleanerInterface $sessionCleaner,
         private readonly CustomerTokenServiceInterface $tokenService,
         private readonly EventManager $eventManager,
-        private readonly LoggerInterface $logger
+        private readonly LoggerInterface $logger,
+        private readonly ResourceConnection $resource
     ) {
     }
 
@@ -91,6 +93,16 @@ class ApprovalManagement implements ApprovalManagementInterface
             $this->tokenService->revokeCustomerAccessToken($customerId);
         } catch (\Throwable) {
             // No token issued.
+        }
+        try {
+            // "Remember Me" (Magento_Persistent): without its row the persistent cookie no longer restores the customer.
+            $connection = $this->resource->getConnection();
+            $table = $this->resource->getTableName('persistent_session');
+            if ($connection->isTableExists($table)) {
+                $connection->delete($table, ['customer_id = ?' => $customerId]);
+            }
+        } catch (\Throwable $e) {
+            $this->logger->warning('Softaware_CustomerApproval: could not clear persistent sessions: ' . $e->getMessage());
         }
     }
 

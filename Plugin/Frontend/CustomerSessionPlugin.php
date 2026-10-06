@@ -65,10 +65,16 @@ class CustomerSessionPlugin
         if ($status === null) {
             return false;
         }
-        // Right after registration the registration controller plugin shows its own message.
-        if ($this->registrationState->getPendingCustomerId() !== $customerId) {
-            $this->messageManager->addErrorMessage($this->loginGuard->getMessage($status));
+        $this->registrationState->setBlockedCustomerId($customerId);
+        if ($this->registrationState->getPendingCustomerId() === $customerId) {
+            // Registered in this request (registration form, social login, ...): explain instead of an error.
+            if (!$this->registrationState->isMessageShown()) {
+                $this->messageManager->addNoticeMessage($this->loginGuard->getRegistrationMessage());
+                $this->registrationState->setMessageShown();
+            }
+            return true;
         }
+        $this->messageManager->addErrorMessage($this->loginGuard->getMessage($status));
         return true;
     }
 }

@@ -19,6 +19,10 @@ class RegistrationState
     /** @var array<int, true> */
     private array $handled = [];
 
+    private bool $messageShown = false;
+
+    private ?int $blockedCustomerId = null;
+
     public function setPendingCustomerId(?int $customerId): void
     {
         $this->pendingCustomerId = $customerId;
@@ -27,6 +31,32 @@ class RegistrationState
     public function getPendingCustomerId(): ?int
     {
         return $this->pendingCustomerId;
+    }
+
+    /**
+     * A password-less sign-in of this customer was refused in this request.
+     */
+    public function setBlockedCustomerId(?int $customerId): void
+    {
+        $this->blockedCustomerId = $customerId;
+    }
+
+    public function getBlockedCustomerId(): ?int
+    {
+        return $this->blockedCustomerId;
+    }
+
+    /**
+     * The "waiting for approval" registration message has been added in this request.
+     */
+    public function setMessageShown(bool $shown = true): void
+    {
+        $this->messageShown = $shown;
+    }
+
+    public function isMessageShown(): bool
+    {
+        return $this->messageShown;
     }
 
     /**

@@ -39,7 +39,7 @@ Website,Website
 "%name,","%name,"
 "Good news: your account at %store_name has been approved and you can now sign in.","Good news: your account at %store_name has been approved and you can now sign in."
 "Sign in","Sign in"
-"Sign in with the email address %email and the password you chose when you registered.","Sign in with the email address %email and the password you chose when you registered."
+"Sign in with your email address %email in the same way as when you registered.","Sign in with your email address %email in the same way as when you registered."
 "Your %store_name account application","Your %store_name account application"
 "Thank you for your interest in %store_name. Unfortunately we are unable to approve your account application.","Thank you for your interest in %store_name. Unfortunately we are unable to approve your account application."
 Reason:,Reason:
