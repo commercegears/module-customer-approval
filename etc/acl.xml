@@ -3,7 +3,7 @@
     <acl>
         <resources>
             <resource id="Magento_Backend::admin">
-                <resource id="Softaware_Base::base">
+                <resource id="Softaware_Core::core">
                     <resource id="Softaware_CustomerApproval::approval" title="Customer Approval" translate="title" sortOrder="45">
                         <resource id="Softaware_CustomerApproval::manage" title="Approve and Reject Customers" translate="title" sortOrder="20"/>
                         <resource id="Softaware_CustomerApproval::config" title="Settings" translate="title" sortOrder="30"/>

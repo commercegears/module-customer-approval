@@ -85,7 +85,7 @@ registration use Magento's controllers in both themes; checkout uses the Luma ch
 ## Compatibility
 
 Magento Open Source / Adobe Commerce 2.4.7–2.4.9, PHP 8.2–8.5, Luma and Hyvä 1.3+.
-Requires `softaware/module-base` ^1.2.
+Requires `softaware/module-core` ^1.2.
 
 ## Limitations
 
