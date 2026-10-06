@@ -8,6 +8,8 @@ declare(strict_types=1);
 
 namespace Softaware\CustomerApproval\Model;
 
+use Magento\Customer\Model\CustomerRegistry;
+use Magento\Framework\Exception\NoSuchEntityException;
 use Magento\Store\Model\StoreManagerInterface;
 use Softaware\CustomerApproval\Api\ApprovalManagementInterface as Approval;
 use Softaware\CustomerApproval\Exception\NotApprovedException;
@@ -22,17 +24,34 @@ class LoginGuard
     public function __construct(
         private readonly Config $config,
         private readonly StatusStorage $storage,
-        private readonly StoreManagerInterface $storeManager
+        private readonly StoreManagerInterface $storeManager,
+        private readonly CustomerRegistry $customerRegistry
     ) {
     }
 
     public function getBlockingStatus(int $customerId, ?int $websiteId): ?string
     {
-        if (!$customerId || !$this->config->isEnabled($websiteId ?: null)) {
+        if (!$customerId) {
+            return null;
+        }
+        if (!$websiteId) {
+            // E.g. Session::loginById() ("Login as Customer"): the switch is per website, so use the customer's.
+            $websiteId = $this->getCustomerWebsiteId($customerId);
+        }
+        if (!$this->config->isEnabled($websiteId ?: null)) {
             return null;
         }
         $status = $this->storage->getStatus($customerId);
         return in_array($status, [Approval::STATUS_PENDING, Approval::STATUS_REJECTED], true) ? $status : null;
+    }
+
+    private function getCustomerWebsiteId(int $customerId): ?int
+    {
+        try {
+            return (int)$this->customerRegistry->retrieve($customerId)->getWebsiteId() ?: null;
+        } catch (NoSuchEntityException) {
+            return null;
+        }
     }
 
     /**
@@ -44,6 +63,17 @@ class LoginGuard
         if ($status !== null) {
             throw new NotApprovedException(__($this->getMessage($status)));
         }
+    }
+
+    /**
+     * Shown right after a registration that needs approval (any registration path).
+     */
+    public function getRegistrationMessage(): string
+    {
+        return $this->config->getRegistrationMessage((int)$this->storeManager->getStore()->getId()) ?: (string)__(
+            'Thank you for registering. Your account needs to be approved before you can sign in. '
+            . 'We will email you as soon as it has been reviewed.'
+        );
     }
 
     public function getMessage(string $status): string
