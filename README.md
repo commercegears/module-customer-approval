@@ -9,11 +9,14 @@ New customer accounts wait for approval by the shop team before they can sign in
 - **Approval rules per website**: approval for all new accounts or only for selected customer groups;
   auto-approve customer groups; auto-approve email domains (`yourcompany.co.uk`, `*.example.com`).
   Accounts created by an admin, through the admin/integration API or from the CLI are approved straight away.
+  Every other new account gets its status from the rules, however it is created (registration form, checkout,
+  REST, GraphQL, social login or another module saving through the customer repository).
   Customers that exist when the module is installed are approved.
 - **Pending and rejected customers cannot sign in**, with a clear message:
   login form (Luma and Hyvä), checkout "Sign In" popup, REST (`POST /V1/integration/customer/token`) and GraphQL
-  (`generateCustomerToken`) token generation. Password-less sign-ins (social login, email confirmation link,
-  Login as Customer) are refused as well.
+  (`generateCustomerToken`) token generation, RSS feed login. Password-less sign-ins (social login, email
+  confirmation link, auto sign-in after registration, Login as Customer on the storefront and GraphQL
+  `generateCustomerTokenAsAdmin`, store switching) are refused as well.
 - **After registration** the customer is not signed in: the "Thank you for registering" message is replaced by
   an approval message and the customer is sent to the login page or a CMS page of your choice.
   Optional notice on the registration form.
@@ -23,7 +26,8 @@ New customer accounts wait for approval by the shop team before they can sign in
   notice bar message while accounts are waiting.
 - **Emails**: to the shop team when an account is waiting (configurable recipients); to the customer when approved
   or rejected (optionally with the reason). Templates can be customised under Marketing > Email Templates.
-- Rejecting signs the customer out of the storefront and revokes their API tokens.
+- Rejecting (or setting back to pending) signs the customer out of the storefront, ends "Remember Me" sessions and
+  revokes their API tokens.
 - Customers cannot change their own status (the attributes are not in any form and are protected on save).
 - Admin REST API and CLI.
 
@@ -85,8 +89,6 @@ Requires `softaware/module-base` ^1.2.
 
 ## Limitations
 
-- Customers who were already signed in when they are set back to pending keep browsing until the session is
-  cleared; rejecting always signs them out.
 - Through the REST/GraphQL token endpoints Magento replaces every sign-in error with its generic message, and
   each refused attempt counts towards Magento's lockout for that account.
 - Admin links in the shop-team email do not contain an admin secret key; with "Add Secret Key to URLs" on, the
