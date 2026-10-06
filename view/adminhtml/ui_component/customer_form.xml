@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <settings>
+        <buttons>
+            <button name="softaware_approve" class="Softaware\CustomerApproval\Block\Adminhtml\Edit\ApproveButton"/>
+            <button name="softaware_reject" class="Softaware\CustomerApproval\Block\Adminhtml\Edit\RejectButton"/>
+        </buttons>
+    </settings>
+</form>

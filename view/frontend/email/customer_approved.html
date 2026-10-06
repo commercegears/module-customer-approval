@@ -1,0 +1,26 @@
+<!--@subject {{trans "Your %store_name account has been approved" store_name=$store.frontend_name}} @-->
+<!--@vars {
+"var customer_name":"Customer name",
+"var store.frontend_name":"Store name",
+"store url=\"customer/account/login\"":"Login URL"
+} @-->
+{{template config_path="design/email/header_template"}}
+
+<p class="greeting">{{trans "%name," name=$customer_name}}</p>
+<p>{{trans "Good news: your account at %store_name has been approved and you can now sign in." store_name=$store.frontend_name}}</p>
+<table class="button" width="100%" cellpadding="0" cellspacing="0" border="0">
+    <tr>
+        <td>
+            <table class="inner-wrapper" border="0" cellspacing="0" cellpadding="0" align="center">
+                <tr>
+                    <td align="center">
+                        <a href="{{store url="customer/account/login"}}" target="_blank">{{trans "Sign in"}}</a>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+<p>{{trans "Sign in with the email address %email and the password you chose when you registered." email=$customer_email}}</p>
+
+{{template config_path="design/email/footer_template"}}

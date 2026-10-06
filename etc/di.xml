@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Softaware\CustomerApproval\Api\ApprovalManagementInterface" type="Softaware\CustomerApproval\Model\ApprovalManagement"/>
+
+    <type name="Magento\Customer\Api\AccountManagementInterface">
+        <plugin name="softaware_customerapproval" type="Softaware\CustomerApproval\Plugin\AccountManagementPlugin"/>
+    </type>
+    <type name="Magento\Customer\Api\CustomerRepositoryInterface">
+        <plugin name="softaware_customerapproval" type="Softaware\CustomerApproval\Plugin\CustomerRepositoryPlugin"/>
+    </type>
+
+    <!-- Lazy: these plugins run on every account/repository call but rarely need the mailer or the session cleaner. -->
+    <type name="Softaware\CustomerApproval\Plugin\AccountManagementPlugin">
+        <arguments>
+            <argument name="notifier" xsi:type="object">Softaware\CustomerApproval\Model\Notifier\Proxy</argument>
+            <argument name="ruleEvaluator" xsi:type="object">Softaware\CustomerApproval\Model\RuleEvaluator\Proxy</argument>
+        </arguments>
+    </type>
+    <type name="Softaware\CustomerApproval\Model\ApprovalManagement">
+        <arguments>
+            <argument name="notifier" xsi:type="object">Softaware\CustomerApproval\Model\Notifier\Proxy</argument>
+        </arguments>
+    </type>
+    <type name="Softaware\CustomerApproval\Model\TrustedContext">
+        <arguments>
+            <argument name="userContext" xsi:type="object">Magento\Authorization\Model\UserContextInterface\Proxy</argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="softaware_customerapproval_queue_listing_data_source" xsi:type="string">Magento\Customer\Model\ResourceModel\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Framework\Console\CommandListInterface">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="softaware_customerapproval_status" xsi:type="object">Softaware\CustomerApproval\Console\Command\StatusCommand\Proxy</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

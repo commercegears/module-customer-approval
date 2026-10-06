@@ -1,0 +1,25 @@
+<!--@subject {{trans "New customer account waiting for approval: %email" email=$customer_email}} @-->
+<!--@vars {
+"var customer_name":"Customer name",
+"var customer_email":"Customer email",
+"var group_name":"Customer group",
+"var website_name":"Website",
+"var customer_url":"Admin customer page URL",
+"var queue_url":"Admin approval queue URL"
+} @-->
+{{template config_path="design/email/header_template"}}
+
+<h1>{{trans "A new customer account is waiting for approval"}}</h1>
+<table>
+    <tr><th align="left">{{trans "Name"}}</th><td>{{var customer_name}}</td></tr>
+    <tr><th align="left">{{trans "Email"}}</th><td>{{var customer_email}}</td></tr>
+    <tr><th align="left">{{trans "Customer group"}}</th><td>{{var group_name}}</td></tr>
+    <tr><th align="left">{{trans "Website"}}</th><td>{{var website_name}}</td></tr>
+</table>
+<p>
+    <a href="{{var customer_url}}">{{trans "Open the customer in the admin"}}</a>
+    &nbsp;|&nbsp;
+    <a href="{{var queue_url}}">{{trans "Open the approval queue"}}</a>
+</p>
+
+{{template config_path="design/email/footer_template"}}

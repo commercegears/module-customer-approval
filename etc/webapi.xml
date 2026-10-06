@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <route url="/V1/softaware/customer-approval/:customerId" method="GET">
+        <service class="Softaware\CustomerApproval\Api\ApprovalManagementInterface" method="getStatus"/>
+        <resources>
+            <resource ref="Softaware_CustomerApproval::manage"/>
+        </resources>
+    </route>
+    <route url="/V1/softaware/customer-approval/:customerId/approve" method="POST">
+        <service class="Softaware\CustomerApproval\Api\ApprovalManagementInterface" method="approve"/>
+        <resources>
+            <resource ref="Softaware_CustomerApproval::manage"/>
+        </resources>
+    </route>
+    <route url="/V1/softaware/customer-approval/:customerId/reject" method="POST">
+        <service class="Softaware\CustomerApproval\Api\ApprovalManagementInterface" method="reject"/>
+        <resources>
+            <resource ref="Softaware_CustomerApproval::manage"/>
+        </resources>
+    </route>
+    <route url="/V1/softaware/customer-approval/:customerId/pending" method="POST">
+        <service class="Softaware\CustomerApproval\Api\ApprovalManagementInterface" method="setPending"/>
+        <resources>
+            <resource ref="Softaware_CustomerApproval::manage"/>
+        </resources>
+    </route>
+</routes>

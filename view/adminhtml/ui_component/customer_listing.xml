@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <listingToolbar name="listing_top">
+        <massaction name="listing_massaction">
+            <action name="softaware_approve">
+                <settings>
+                    <url path="softaware_customerapproval/customer/massApprove"/>
+                    <type>softaware_approve</type>
+                    <label translate="true">Approve account</label>
+                </settings>
+            </action>
+            <action name="softaware_reject">
+                <settings>
+                    <confirm>
+                        <message translate="true">Reject the selected customer accounts? They are signed out and cannot sign in.</message>
+                        <title translate="true">Reject accounts</title>
+                    </confirm>
+                    <url path="softaware_customerapproval/customer/massReject"/>
+                    <type>softaware_reject</type>
+                    <label translate="true">Reject account</label>
+                </settings>
+            </action>
+        </massaction>
+    </listingToolbar>
+</listing>

@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="softaware_customerapproval" translate="label" sortOrder="45" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Customer Approval</label>
+            <tab>softaware</tab>
+            <resource>Softaware_CustomerApproval::config</resource>
+            <group id="general" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1">
+                <label>Approval Rules</label>
+                <field id="enabled" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" canRestore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>When off, new accounts are not held for approval and pending or rejected customers can sign in again.</comment>
+                </field>
+                <field id="mode" translate="label comment" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" canRestore="1">
+                    <label>Require Approval For</label>
+                    <source_model>Softaware\CustomerApproval\Model\Config\Source\Mode</source_model>
+                    <comment>Accounts created by an admin, through the admin API or from the command line are always approved.</comment>
+                    <depends><field id="enabled">1</field></depends>
+                </field>
+                <field id="groups" translate="label comment" type="multiselect" sortOrder="30" showInDefault="1" showInWebsite="1" canRestore="1">
+                    <label>Customer Groups That Need Approval</label>
+                    <source_model>Magento\Customer\Model\Customer\Source\Group</source_model>
+                    <comment>The group the new account is assigned to (by default "Default Group" under Customers > Customer Configuration > Create New Account Options).</comment>
+                    <can_be_empty>1</can_be_empty>
+                    <depends>
+                        <field id="enabled">1</field>
+                        <field id="mode">groups</field>
+                    </depends>
+                </field>
+                <field id="auto_approve_groups" translate="label" type="multiselect" sortOrder="40" showInDefault="1" showInWebsite="1" canRestore="1">
+                    <label>Auto-approve These Customer Groups</label>
+                    <source_model>Magento\Customer\Model\Customer\Source\Group</source_model>
+                    <can_be_empty>1</can_be_empty>
+                    <depends>
+                        <field id="enabled">1</field>
+                        <field id="mode">all</field>
+                    </depends>
+                </field>
+                <field id="auto_approve_domains" translate="label comment" type="textarea" sortOrder="50" showInDefault="1" showInWebsite="1">
+                    <label>Auto-approve Email Domains</label>
+                    <comment><![CDATA[One domain per line or comma-separated, for example <code>yourcompany.co.uk</code>. Use <code>*.example.com</code> to include sub-domains.]]></comment>
+                    <depends><field id="enabled">1</field></depends>
+                </field>
+            </group>
+            <group id="frontend" translate="label" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Storefront Messages</label>
+                <field id="show_registration_notice" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Show Notice on Registration Form</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="registration_notice" translate="label" type="textarea" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Registration Form Notice</label>
+                    <depends><field id="show_registration_notice">1</field></depends>
+                </field>
+                <field id="registration_message" translate="label comment" type="textarea" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Message After Registration</label>
+                    <comment>Shown instead of signing the customer in when the new account needs approval.</comment>
+                </field>
+                <field id="pending_message" translate="label comment" type="textarea" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Sign-in Message: Pending</label>
+                    <comment>Shown on the login form and checkout login when a pending customer tries to sign in.</comment>
+                </field>
+                <field id="rejected_message" translate="label" type="textarea" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Sign-in Message: Rejected</label>
+                </field>
+                <field id="redirect_page" translate="label comment" type="select" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>After Registration, Go To</label>
+                    <source_model>Softaware\CustomerApproval\Model\Config\Source\CmsPage</source_model>
+                    <comment>A CMS page explaining the approval process, or the login page.</comment>
+                </field>
+            </group>
+            <group id="admin_notification" translate="label" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Email to Shop Team</label>
+                <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" canRestore="1">
+                    <label>Email on New Account Waiting for Approval</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="recipients" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1">
+                    <label>Recipients</label>
+                    <comment>Comma-separated email addresses.</comment>
+                    <depends><field id="enabled">1</field></depends>
+                </field>
+                <field id="template" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Email Template</label>
+                    <source_model>Magento\Config\Model\Config\Source\Email\Template</source_model>
+                    <depends><field id="enabled">1</field></depends>
+                </field>
+            </group>
+            <group id="customer_notification" translate="label" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Emails to Customers</label>
+                <field id="sender" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Email Sender</label>
+                    <source_model>Magento\Config\Model\Config\Source\Email\Identity</source_model>
+                    <comment>Also used as the sender of the email to the shop team.</comment>
+                </field>
+                <field id="approved_enabled" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Send "Account Approved" Email</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="approved_template" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>"Account Approved" Template</label>
+                    <source_model>Magento\Config\Model\Config\Source\Email\Template</source_model>
+                    <depends><field id="approved_enabled">1</field></depends>
+                </field>
+                <field id="rejected_enabled" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Send "Account Not Approved" Email</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="rejected_template" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>"Account Not Approved" Template</label>
+                    <source_model>Magento\Config\Model\Config\Source\Email\Template</source_model>
+                    <depends><field id="rejected_enabled">1</field></depends>
+                </field>
+                <field id="include_reason" translate="label comment" type="select" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Include Rejection Reason in Email</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>The reason entered when rejecting from the customer page.</comment>
+                    <depends><field id="rejected_enabled">1</field></depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\Notification\MessageList">
+        <arguments>
+            <argument name="messages" xsi:type="array">
+                <item name="softaware_customerapproval_pending" xsi:type="string">Softaware\CustomerApproval\Model\System\Message\PendingApproval</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Backend\Block\Menu">
+        <plugin name="softaware_customerapproval_count" type="Softaware\CustomerApproval\Plugin\Admin\MenuCountPlugin"/>
+    </type>
+    <type name="Magento\Backend\Block\AnchorRenderer">
+        <plugin name="softaware_customerapproval_count" type="Softaware\CustomerApproval\Plugin\Admin\MenuCountPlugin"/>
+    </type>
+</config>

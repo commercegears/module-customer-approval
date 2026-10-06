@@ -1,0 +1,16 @@
+<!--@subject {{trans "Your %store_name account application" store_name=$store.frontend_name}} @-->
+<!--@vars {
+"var customer_name":"Customer name",
+"var store.frontend_name":"Store name",
+"var reason":"Reason (if included)"
+} @-->
+{{template config_path="design/email/header_template"}}
+
+<p class="greeting">{{trans "%name," name=$customer_name}}</p>
+<p>{{trans "Thank you for your interest in %store_name. Unfortunately we are unable to approve your account application." store_name=$store.frontend_name}}</p>
+{{depend has_reason}}
+<p>{{trans "Reason:"}} {{var reason}}</p>
+{{/depend}}
+<p>{{trans "If you have any questions, please reply to this email or contact us."}}</p>
+
+{{template config_path="design/email/footer_template"}}

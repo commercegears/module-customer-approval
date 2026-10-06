@@ -1,0 +1,26 @@
+<?php
+/**
+ * Softaware Customer Approval
+ *
+ * @var \Softaware\CustomerApproval\Block\Adminhtml\Customer\StatusNotice $block
+ * @var \Magento\Framework\Escaper $escaper
+ */
+$status = $block->getStatus();
+$reason = $block->getReason();
+?>
+<div class="messages">
+    <?php if ($status === 'rejected'): ?>
+        <div class="message message-error error">
+            <div>
+                <?= $escaper->escapeHtml(__('This customer account was rejected; the customer cannot sign in.')) ?>
+                <?php if ($reason): ?>
+                    <?= $escaper->escapeHtml(__('Reason: %1', $reason)) ?>
+                <?php endif; ?>
+            </div>
+        </div>
+    <?php else: ?>
+        <div class="message message-warning warning">
+            <div><?= $escaper->escapeHtml(__('This customer account is waiting for approval; the customer cannot sign in yet. Use "Approve" or "Reject" above.')) ?></div>
+        </div>
+    <?php endif; ?>
+</div>
