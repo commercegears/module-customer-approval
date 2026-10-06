@@ -10,10 +10,20 @@
     </type>
 
     <!-- Lazy: these plugins run on every account/repository call but rarely need the mailer or the session cleaner. -->
-    <type name="Softaware\CustomerApproval\Plugin\AccountManagementPlugin">
+    <type name="Softaware\CustomerApproval\Model\NewAccountHandler">
         <arguments>
             <argument name="notifier" xsi:type="object">Softaware\CustomerApproval\Model\Notifier\Proxy</argument>
             <argument name="ruleEvaluator" xsi:type="object">Softaware\CustomerApproval\Model\RuleEvaluator\Proxy</argument>
+        </arguments>
+    </type>
+    <type name="Softaware\CustomerApproval\Plugin\AccountManagementPlugin">
+        <arguments>
+            <argument name="newAccountHandler" xsi:type="object">Softaware\CustomerApproval\Model\NewAccountHandler\Proxy</argument>
+        </arguments>
+    </type>
+    <type name="Softaware\CustomerApproval\Plugin\CustomerRepositoryPlugin">
+        <arguments>
+            <argument name="newAccountHandler" xsi:type="object">Softaware\CustomerApproval\Model\NewAccountHandler\Proxy</argument>
         </arguments>
     </type>
     <type name="Softaware\CustomerApproval\Model\ApprovalManagement">
