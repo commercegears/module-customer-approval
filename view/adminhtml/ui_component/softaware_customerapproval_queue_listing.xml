@@ -32,6 +32,7 @@
         </settings>
         <bookmark name="bookmarks"/>
         <columnsControls name="columns_controls"/>
+        <filterSearch name="fulltext"/>
         <filters name="listing_filters"/>
         <massaction name="listing_massaction">
             <action name="approve">
@@ -45,7 +46,7 @@
                 <settings>
                     <confirm>
                         <message translate="true">Reject the selected customer accounts? They cannot sign in. To add a reason, use the Reject button on the customer page.</message>
-                        <title translate="true">Reject accounts</title>
+                        <title translate="true">Reject Accounts</title>
                     </confirm>
                     <url path="softaware_customerapproval/customer/massReject"/>
                     <type>reject</type>
@@ -76,14 +77,18 @@
         <column name="email" sortOrder="30">
             <settings>
                 <filter>text</filter>
+                <fieldClass>
+                    <class name="sw-ca-email">true</class>
+                </fieldClass>
                 <label translate="true">Email</label>
             </settings>
         </column>
-        <column name="softaware_approval_status" component="Magento_Ui/js/grid/columns/select" sortOrder="40">
+        <column name="softaware_approval_status" class="Softaware\CustomerApproval\Ui\Component\Listing\Column\ApprovalStatus" sortOrder="40">
             <settings>
                 <options class="Softaware\CustomerApproval\Model\Attribute\Source\Status"/>
                 <filter>select</filter>
                 <dataType>select</dataType>
+                <bodyTmpl>ui/grid/cells/html</bodyTmpl>
                 <label translate="true">Approval Status</label>
             </settings>
         </column>
@@ -107,6 +112,7 @@
                 <filter>select</filter>
                 <dataType>select</dataType>
                 <label translate="true">Website</label>
+                <visible>false</visible>
             </settings>
         </column>
         <column name="billing_company" sortOrder="80">

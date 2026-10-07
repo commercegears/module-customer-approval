@@ -37,27 +37,28 @@ class QueueActions extends Column
             if (!$id) {
                 continue;
             }
+            $status = (string)($item['softaware_approval_status_code'] ?? $item['softaware_approval_status'] ?? '');
             $actions = [
                 'edit' => [
                     'href' => $this->urlBuilder->getUrl('customer/index/edit', ['id' => $id]),
-                    'label' => __('View customer'),
+                    'label' => __('View Customer'),
                 ],
             ];
-            if (($item['softaware_approval_status'] ?? '') !== Approval::STATUS_APPROVED) {
+            if ($status !== Approval::STATUS_APPROVED) {
                 $actions['approve'] = [
                     'href' => $this->urlBuilder->getUrl('softaware_customerapproval/customer/approve', ['id' => $id, 'back' => 'queue']),
                     'label' => __('Approve'),
                     'post' => true,
                 ];
             }
-            if (($item['softaware_approval_status'] ?? '') !== Approval::STATUS_REJECTED) {
+            if ($status !== Approval::STATUS_REJECTED) {
                 $actions['reject'] = [
                     'href' => $this->urlBuilder->getUrl('softaware_customerapproval/customer/reject', ['id' => $id, 'back' => 'queue']),
                     'label' => __('Reject'),
                     'post' => true,
                     'confirm' => [
-                        'title' => __('Reject account'),
-                        'message' => __('Reject this account? The customer cannot sign in.'),
+                        'title' => __('Reject Account'),
+                        'message' => __('Reject this account? The customer cannot sign in. To add a reason, use the Reject button on the customer page.'),
                     ],
                 ];
             }

@@ -1,0 +1,9 @@
+/**
+ * Softaware Customer Approval: admin (approval queue)
+ */
+.sw-ca-intro { margin: 0 0 2rem; max-width: 100rem; }
+.sw-ca-empty { border: 1px solid #e3e3e3; background: #fff; padding: 4rem 2rem; text-align: center; margin-top: 1rem; }
+.sw-ca-empty__title { font-size: 2rem; font-weight: 600; margin: 0 0 1rem; }
+.sw-ca-empty__text { max-width: 62rem; margin: 0 auto 2rem; line-height: 1.5; }
+/* long email addresses wrap instead of pushing the grid wider than the page at narrow widths */
+.data-grid td.sw-ca-email { overflow-wrap: anywhere; }
