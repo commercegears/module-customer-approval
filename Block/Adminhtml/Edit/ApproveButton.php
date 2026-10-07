@@ -23,8 +23,10 @@ class ApproveButton extends ApprovalButtonData
         }
         return $this->buildButton((string)__('Approve'), 'softaware-approve', 'approve', [
             'mode' => 'approve',
-            'title' => (string)__('Approve customer'),
+            'title' => (string)__('Approve Account'),
             'message' => (string)__('Approve this account? The customer can sign in straight away and gets the "account approved" email if it is enabled.'),
+            'acceptLabel' => (string)__('Approve'),
+            'cancelLabel' => (string)__('Cancel'),
         ], 35);
     }
 }

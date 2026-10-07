@@ -17,6 +17,8 @@ class MassReject extends AbstractMassAction
 
     protected function getSuccessMessage(int $count): string
     {
-        return (string)__('%1 customer account(s) rejected.', $count);
+        return $count === 1
+            ? (string)__('1 customer account rejected.')
+            : (string)__('%1 customer accounts rejected.', $count);
     }
 }

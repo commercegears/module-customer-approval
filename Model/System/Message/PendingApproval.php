@@ -44,10 +44,14 @@ class PendingApproval implements MessageInterface
     public function getText(): string
     {
         $count = $this->pendingCounter->get();
+        $url = $this->escaper->escapeUrl($this->urlBuilder->getUrl('softaware_customerapproval/queue/index'));
+        if ($count === 1) {
+            return (string)__('1 customer account is waiting for approval. <a href="%1">Review it in the approval queue</a>.', $url);
+        }
         return (string)__(
-            '%1 customer account(s) waiting for approval. <a href="%2">Review them in the approval queue</a>.',
+            '%1 customer accounts are waiting for approval. <a href="%2">Review them in the approval queue</a>.',
             $count,
-            $this->escaper->escapeUrl($this->urlBuilder->getUrl('softaware_customerapproval/queue/index'))
+            $url
         );
     }
 

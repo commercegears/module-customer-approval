@@ -17,6 +17,8 @@ class MassApprove extends AbstractMassAction
 
     protected function getSuccessMessage(int $count): string
     {
-        return (string)__('%1 customer account(s) approved.', $count);
+        return $count === 1
+            ? (string)__('1 customer account approved.')
+            : (string)__('%1 customer accounts approved.', $count);
     }
 }

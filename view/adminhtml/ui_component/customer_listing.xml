@@ -6,20 +6,31 @@
                 <settings>
                     <url path="softaware_customerapproval/customer/massApprove"/>
                     <type>softaware_approve</type>
-                    <label translate="true">Approve account</label>
+                    <label translate="true">Approve Account</label>
                 </settings>
             </action>
             <action name="softaware_reject">
                 <settings>
                     <confirm>
                         <message translate="true">Reject the selected customer accounts? They are signed out and cannot sign in.</message>
-                        <title translate="true">Reject accounts</title>
+                        <title translate="true">Reject Accounts</title>
                     </confirm>
                     <url path="softaware_customerapproval/customer/massReject"/>
                     <type>softaware_reject</type>
-                    <label translate="true">Reject account</label>
+                    <label translate="true">Reject Account</label>
                 </settings>
             </action>
         </massaction>
     </listingToolbar>
+    <columns name="customer_columns">
+        <!-- Attribute column (filter, visibility and options come from the attribute); shown as a status badge -->
+        <column name="softaware_approval_status" class="Softaware\CustomerApproval\Ui\Component\Listing\Column\ApprovalStatus" sortOrder="280">
+            <settings>
+                <options class="Softaware\CustomerApproval\Model\Attribute\Source\Status"/>
+                <dataType>select</dataType>
+                <bodyTmpl>ui/grid/cells/html</bodyTmpl>
+                <label translate="true">Approval Status</label>
+            </settings>
+        </column>
+    </columns>
 </listing>
