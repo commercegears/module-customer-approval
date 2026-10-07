@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.2.1 (2026-10-07)
+
+### Fixed
+
+- README: the module requires `softaware/module-core` ^1.0 (the README said ^1.2; composer.json was right).
+
 ## 1.2.0 (2026-10-07)
 
 ### Added
