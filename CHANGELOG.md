@@ -1,5 +1,31 @@
 # Changelog
 
+## 1.2.0 (2026-10-07)
+
+### Added
+
+- Approval queue: keyword search (name, email address and the other indexed customer fields).
+
+### Changed
+
+- Approval queue: approval status shown as Magento status badges (Pending, Approved, Rejected), a one-line
+  introduction, and, when no account is waiting, a short explanation with an "Open Settings" button instead of an
+  empty table. Long email addresses wrap instead of widening the grid; the Website column is hidden by default
+  (available under Columns) so the grid fits at 1024 px.
+- Customer grid: the "Approval Status" column shows the same status badges; mass actions renamed to
+  "Approve Account" / "Reject Account".
+- Confirmation dialogs titled "Approve Account" / "Reject Account"; the queue's row "Reject" confirmation explains
+  how to add a reason. Row action "View Customer".
+- Notice bar and mass-action messages use proper singular/plural wording ("1 customer account is waiting for
+  approval", "3 customer accounts approved") instead of "account(s)".
+- Settings: Approval Rules opens first, every field explains what it does and its default, "Recipients" is
+  validated as a comma-separated list of email addresses, and every field can be reset to its default
+  ("Use system value").
+
+### Fixed
+
+- Approval queue: the status badges were not shown (raw status codes such as "pending" were displayed).
+
 ## 1.1.0 (2026-10-06)
 
 ### Changed

@@ -22,8 +22,8 @@ New customer accounts wait for approval by the shop team before they can sign in
   Optional notice on the registration form.
 - **Admin**: "Approval Status" column and filter in the customer grid, mass approve/reject in the customer grid,
   Approve / Reject buttons and a status notice on the customer page (reject asks for an optional reason),
-  an **Approval Queue** grid (pending and rejected accounts), the number of pending accounts in the menu, and a
-  notice bar message while accounts are waiting.
+  an **Approval Queue** grid (pending and rejected accounts, keyword search, filters, status badges), the number
+  of pending accounts in the menu, and a notice bar message while accounts are waiting.
 - **Emails**: to the shop team when an account is waiting (configurable recipients); to the customer when approved
   or rejected (optionally with the reason). Templates can be customised under Marketing > Email Templates.
 - Rejecting (or setting back to pending) signs the customer out of the storefront, ends "Remember Me" sessions and
@@ -34,7 +34,7 @@ New customer accounts wait for approval by the shop team before they can sign in
 ## Where in the admin
 
 - Softaware > Customer Approval > Approval Queue (with pending count) / Settings
-- Customers > All Customers: "Approval Status" column, Actions > Approve account / Reject account
+- Customers > All Customers: "Approval Status" column (status badges), Actions > Approve Account / Reject Account
 - Customer edit page: Approve / Reject buttons, status notice
 - Settings: Stores > Configuration > Softaware > Customer Approval (`softaware_customerapproval/*`)
 - ACL: Softaware > Customer Approval > Approve and Reject Customers / Settings
