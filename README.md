@@ -4,6 +4,8 @@
 
 New customer accounts wait for approval by the shop team before they can sign in. Works with Luma and Hyvä.
 
+Documentation: [User guide](docs/user-guide.md) · [FAQ](docs/faq.md)
+
 ## Features
 
 - **Approval rules per website**: approval for all new accounts or only for selected customer groups;

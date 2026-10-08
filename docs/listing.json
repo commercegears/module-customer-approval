@@ -1,0 +1,119 @@
+{
+    "tagline": "New customer accounts wait for your approval before they can sign in, with rules per website, an approval queue and emails to your team and your customers.",
+    "key_features": [
+        "Approval for all new accounts or selected customer groups",
+        "Auto-approve customer groups and email domains",
+        "Sign-in blocked until approved, on every sign-in path",
+        "Approval Queue with search, filters and status badges",
+        "Approve and Reject on the customer page, with a reason",
+        "Emails to the shop team and to the customer",
+        "REST API, CLI and an event for integrations",
+        "Hyvä and Luma registration notice included"
+    ],
+    "benefits": [
+        {
+            "icon": "users",
+            "title": "Trade and B2B shops",
+            "text": "Only the customers you approve can sign in, see their account and order. Everyone else gets a clear message."
+        },
+        {
+            "icon": "shield",
+            "title": "No back doors",
+            "text": "Pending and rejected customers are refused on the sign-in page, at checkout, through REST and GraphQL tokens and through password-less sign-ins."
+        },
+        {
+            "icon": "clock",
+            "title": "Less manual work",
+            "text": "Auto-approve your own groups and trusted email domains, and approve the rest from one queue or in bulk."
+        }
+    ],
+    "showcase": [
+        {
+            "label": "Registration",
+            "title": "Tell shoppers before they register",
+            "text": "An optional notice above the registration form explains that accounts are reviewed. After registering, the customer is not signed in and sees your approval message.",
+            "image": "docs/images/register-luma.png"
+        },
+        {
+            "label": "Sign-in",
+            "title": "A clear message instead of an account",
+            "text": "A pending or rejected customer who tries to sign in sees your message for that status. The texts can be changed per store view.",
+            "image": "docs/images/login-luma.png"
+        },
+        {
+            "label": "Hyvä",
+            "title": "Native Hyvä template",
+            "text": "The registration notice has its own Hyvä template, picked automatically. Sign-in messages appear in Hyvä's own message area.",
+            "image": "docs/images/register-hyva.png"
+        },
+        {
+            "label": "Approval Queue",
+            "title": "Every waiting account in one grid",
+            "text": "Pending and rejected accounts with keyword search, filters and status badges. Approve or reject in bulk; the menu shows how many are waiting.",
+            "image": "docs/images/admin-queue.png"
+        },
+        {
+            "label": "Customer page",
+            "title": "Approve or Reject on the customer page",
+            "text": "A notice shows the status, and the Reject button asks for an optional reason that can be included in the email to the customer.",
+            "image": "docs/images/admin-customer.png"
+        },
+        {
+            "label": "Settings",
+            "title": "Rules per website",
+            "text": "Choose who needs approval, which groups and email domains are approved straight away, the storefront messages and the emails.",
+            "image": "docs/images/admin-settings.png"
+        }
+    ],
+    "feature_groups": [
+        {
+            "title": "Approval rules",
+            "items": [
+                "All new accounts or selected customer groups",
+                "Auto-approve customer groups",
+                "Auto-approve email domains, with *.domain for sub-domains",
+                "Accounts created by an admin, admin API or CLI approved",
+                "Existing customers approved on installation"
+            ]
+        },
+        {
+            "title": "Storefront",
+            "items": [
+                "Sign-in blocked on Luma and Hyvä and at checkout",
+                "REST and GraphQL customer tokens refused",
+                "Social login, confirmation links and Login as Customer refused",
+                "Approval message after registration, login page or CMS page",
+                "Optional notice on the registration form"
+            ]
+        },
+        {
+            "title": "Admin",
+            "items": [
+                "Approval Queue with the pending count in the menu",
+                "Approval Status column, filter and mass actions in Customers",
+                "Approve and Reject buttons with an optional reason",
+                "Notice bar message while accounts are waiting",
+                "Separate ACL permissions for approving and for settings"
+            ]
+        },
+        {
+            "title": "Emails and integrations",
+            "items": [
+                "Email to the shop team for each waiting account",
+                "Approved and not approved emails to the customer",
+                "Rejecting signs the customer out and revokes tokens",
+                "Admin REST API and CLI command",
+                "Event softaware_customer_approval_status_changed"
+            ]
+        }
+    ],
+    "demo": {
+        "admin": [
+            {
+                "label": "Admin panel",
+                "url": "https://demo.softawarecommerce.com/try-admin/customer-approval",
+                "image": "docs/images/admin-queue.png"
+            }
+        ]
+    }
+}
