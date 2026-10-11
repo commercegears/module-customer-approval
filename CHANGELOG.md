@@ -1,33 +1,35 @@
 # Changelog
 
 ## 1.2.4 (2026-10-11)
-- Approval queue: its own "nothing found" texts for a search or filter without results.
-- Storefront messages and auto-approve domains are checked on the server when saved (length, no HTML).
+- Improvement: the approval queue has its own "nothing found" texts for a search or filter without results.
+- Improvement: storefront messages and auto-approve domains are checked when saved (length, no HTML).
 
 ## 1.2.3 (2026-10-11)
-- Approval queue: "Approve" asks for confirmation and no longer opens a 404 page.
+- Fix: "Approve" in the approval queue no longer opens a 404 page and now asks for confirmation.
 
 ## 1.2.2 (2026-10-08)
-- Product listing, FAQ and user guide.
+- New: product listing, FAQ and user guide.
 
 ## 1.2.1 (2026-10-07)
-- README: corrected the required softaware/module-core version.
+- Fix: the README states the correct Softaware Core version.
 
 ## 1.2.0 (2026-10-07)
-- Approval queue: keyword search, status badges, short introduction and empty-state help.
-- Clearer confirmations and messages with proper singular and plural wording.
-- Settings explain every field and its default; recipients are checked as email addresses.
+- New: keyword search on the approval queue.
+- Improvement: status badges, short introduction and empty-state help on the approval queue.
+- Improvement: clearer confirmations and messages with proper singular and plural wording.
+- Improvement: settings explain every field and its default; recipients are checked as email addresses.
 
 ## 1.1.0 (2026-10-06)
-- Requires softaware/module-core instead of softaware/module-base; menu and permissions moved to "Softaware".
+- Improvement: requires Softaware Core instead of Softaware Base; menu and permissions move under "Softaware".
 
 ## 1.0.1 (2026-10-06)
-- Accounts created by other modules (for example social sign-up) now go through approval too.
-- Pending and rejected customers can no longer get in through "Login as Customer" tokens.
-- Rejecting a customer ends their "Remember Me" session; clearer messages after email confirmation.
+- Fix: accounts created by other modules (for example social sign-up) now go through approval too.
+- Fix: pending and rejected customers can no longer get in through "Login as Customer" tokens.
+- Fix: rejecting a customer ends their "Remember Me" session.
+- Improvement: clearer messages after email confirmation.
 
 ## 1.0.0 (2026-10-06)
-- Approval of new accounts per website: all or selected groups, auto-approve groups and email domains.
-- Sign-in blocked for pending and rejected customers on Luma, Hyvä, checkout, REST and GraphQL.
-- Admin: approval queue, customer grid column and mass actions, approve and reject buttons with a reason.
-- Emails to the shop team and to customers, REST API and CLI.
+- New: first release with approval of new accounts per website, auto-approve groups and email domains.
+- New: sign-in blocked for pending and rejected customers on Luma, Hyvä, checkout, REST and GraphQL.
+- New: approval queue, customer grid column and mass actions, approve and reject buttons with a reason.
+- New: emails to the shop team and to customers, REST API and command line tools.
