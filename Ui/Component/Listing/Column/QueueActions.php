@@ -48,7 +48,13 @@ class QueueActions extends Column
                 $actions['approve'] = [
                     'href' => $this->urlBuilder->getUrl('softaware_customerapproval/customer/approve', ['id' => $id, 'back' => 'queue']),
                     'label' => __('Approve'),
+                    // The grid only posts actions that have a confirm (or callback); without one it opens the
+                    // link with GET, which the POST-only controller answers with a 404.
                     'post' => true,
+                    'confirm' => [
+                        'title' => __('Approve Account'),
+                        'message' => __('Approve this account? The customer can then sign in.'),
+                    ],
                 ];
             }
             if ($status !== Approval::STATUS_REJECTED) {

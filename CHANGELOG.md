@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.2.3 (2026-10-11)
+
+### Fixed
+
+- "Approve" in the approval queue grid opened a 404 page: the link was sent with GET to a POST-only
+  action. The action now asks for confirmation and posts the request.
+
 ## 1.2.2 (2026-10-08)
 
 ### Added
