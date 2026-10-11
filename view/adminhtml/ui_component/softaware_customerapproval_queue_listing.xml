@@ -56,7 +56,7 @@
         </massaction>
         <paging name="listing_paging"/>
     </listingToolbar>
-    <columns name="softaware_customerapproval_queue_columns">
+    <columns name="softaware_customerapproval_queue_columns" component="Softaware_CustomerApproval/js/grid/listing">
         <selectionsColumn name="ids">
             <settings>
                 <indexField>entity_id</indexField>

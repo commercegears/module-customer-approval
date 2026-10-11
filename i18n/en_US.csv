@@ -1,113 +1,116 @@
-Approve,Approve
-Approve Account,Approve Account
+"Approve","Approve"
+"Approve Account","Approve Account"
 "Approve this account? The customer can sign in straight away and gets the ""account approved"" email if it is enabled.","Approve this account? The customer can sign in straight away and gets the ""account approved"" email if it is enabled."
-Reject,Reject
-Reject Account,Reject Account
+"Reject","Reject"
+"Reject Account","Reject Account"
 "--set must be approved, rejected or pending.","--set must be approved, rejected or pending."
-The customer account was approved.,The customer account was approved.
-%1 customer accounts approved.,%1 customer accounts approved.
-%1 customer accounts rejected.,%1 customer accounts rejected.
-The customer account is pending approval again.,The customer account is pending approval again.
-The customer account was rejected.,The customer account was rejected.
-Customer Approval Queue,Customer Approval Queue
-Pending approval,Pending approval
-Approved,Approved
-Rejected,Rejected
-Login page,Login page
-All new accounts,All new accounts
-Only accounts in selected customer groups,Only accounts in selected customer groups
-Your account application was not approved. Please contact us if you think this is a mistake.,Your account application was not approved. Please contact us if you think this is a mistake.
-Your account is waiting for approval. We will email you as soon as it has been reviewed.,Your account is waiting for approval. We will email you as soon as it has been reviewed.
+"The customer account was approved.","The customer account was approved."
+"%1 customer accounts approved.","%1 customer accounts approved."
+"%1 customer accounts rejected.","%1 customer accounts rejected."
+"The customer account is pending approval again.","The customer account is pending approval again."
+"The customer account was rejected.","The customer account was rejected."
+"Customer Approval Queue","Customer Approval Queue"
+"Pending approval","Pending approval"
+"Approved","Approved"
+"Rejected","Rejected"
+"Login page","Login page"
+"All new accounts","All new accounts"
+"Only accounts in selected customer groups","Only accounts in selected customer groups"
+"Your account application was not approved. Please contact us if you think this is a mistake.","Your account application was not approved. Please contact us if you think this is a mistake."
+"Your account is waiting for approval. We will email you as soon as it has been reviewed.","Your account is waiting for approval. We will email you as soon as it has been reviewed."
 "%1 customer accounts are waiting for approval. <a href=""%2"">Review them in the approval queue</a>.","%1 customer accounts are waiting for approval. <a href=""%2"">Review them in the approval queue</a>."
-Thank you for registering. Your account needs to be approved before you can sign in. We will email you as soon as it has been reviewed.,Thank you for registering. Your account needs to be approved before you can sign in. We will email you as soon as it has been reviewed.
-View Customer,View Customer
+"Thank you for registering. Your account needs to be approved before you can sign in. We will email you as soon as it has been reviewed.","Thank you for registering. Your account needs to be approved before you can sign in. We will email you as soon as it has been reviewed."
+"View Customer","View Customer"
 "Reject this account? The customer cannot sign in. To add a reason, use the Reject button on the customer page.","Reject this account? The customer cannot sign in. To add a reason, use the Reject button on the customer page."
-This customer account was rejected; the customer cannot sign in.,This customer account was rejected; the customer cannot sign in.
-Reason: %1,Reason: %1
+"This customer account was rejected; the customer cannot sign in.","This customer account was rejected; the customer cannot sign in."
+"Reason: %1","Reason: %1"
 "This customer account is waiting for approval; the customer cannot sign in yet. Use ""Approve"" or ""Reject"" above.","This customer account is waiting for approval; the customer cannot sign in yet. Use ""Approve"" or ""Reject"" above."
-New customer account waiting for approval: %email,New customer account waiting for approval: %email
-A new customer account is waiting for approval,A new customer account is waiting for approval
-Name,Name
-Email,Email
-Customer group,Customer group
-Website,Website
-Open the customer in the admin,Open the customer in the admin
-Open the approval queue,Open the approval queue
-Your %store_name account has been approved,Your %store_name account has been approved
+"New customer account waiting for approval: %email","New customer account waiting for approval: %email"
+"A new customer account is waiting for approval","A new customer account is waiting for approval"
+"Name","Name"
+"Email","Email"
+"Customer group","Customer group"
+"Website","Website"
+"Open the customer in the admin","Open the customer in the admin"
+"Open the approval queue","Open the approval queue"
+"Your %store_name account has been approved","Your %store_name account has been approved"
 "%name,","%name,"
-Good news: your account at %store_name has been approved and you can now sign in.,Good news: your account at %store_name has been approved and you can now sign in.
-Sign in,Sign in
-Sign in with your email address %email in the same way as when you registered.,Sign in with your email address %email in the same way as when you registered.
-Your %store_name account application,Your %store_name account application
-Thank you for your interest in %store_name. Unfortunately we are unable to approve your account application.,Thank you for your interest in %store_name. Unfortunately we are unable to approve your account application.
-Reason:,Reason:
+"Good news: your account at %store_name has been approved and you can now sign in.","Good news: your account at %store_name has been approved and you can now sign in."
+"Sign in","Sign in"
+"Sign in with your email address %email in the same way as when you registered.","Sign in with your email address %email in the same way as when you registered."
+"Your %store_name account application","Your %store_name account application"
+"Thank you for your interest in %store_name. Unfortunately we are unable to approve your account application.","Thank you for your interest in %store_name. Unfortunately we are unable to approve your account application."
+"Reason:","Reason:"
 "If you have any questions, please reply to this email or contact us.","If you have any questions, please reply to this email or contact us."
-Customer Approval,Customer Approval
-Approve and Reject Customers,Approve and Reject Customers
-Settings,Settings
-Approval Queue,Approval Queue
-Approval Rules,Approval Rules
-Enabled,Enabled
+"Customer Approval","Customer Approval"
+"Approve and Reject Customers","Approve and Reject Customers"
+"Settings","Settings"
+"Approval Queue","Approval Queue"
+"Approval Rules","Approval Rules"
+"Enabled","Enabled"
 "When off, new accounts are not held for approval and pending or rejected customers can sign in again. Default: No.","When off, new accounts are not held for approval and pending or rejected customers can sign in again. Default: No."
-Require Approval For,Require Approval For
+"Require Approval For","Require Approval For"
 "Accounts created by an admin, through the admin API or from the command line are always approved. Default: All new accounts.","Accounts created by an admin, through the admin API or from the command line are always approved. Default: All new accounts."
-Customer Groups That Need Approval,Customer Groups That Need Approval
+"Customer Groups That Need Approval","Customer Groups That Need Approval"
 "The group the new account is assigned to (by default ""Default Group"" under Customers > Customer Configuration > Create New Account Options). If none is selected, no account needs approval.","The group the new account is assigned to (by default ""Default Group"" under Customers > Customer Configuration > Create New Account Options). If none is selected, no account needs approval."
-Auto-approve These Customer Groups,Auto-approve These Customer Groups
-Auto-approve Email Domains,Auto-approve Email Domains
+"Auto-approve These Customer Groups","Auto-approve These Customer Groups"
+"Auto-approve Email Domains","Auto-approve Email Domains"
 "One domain per line or comma-separated, for example <code>yourcompany.co.uk</code>. Use <code>*.example.com</code> to include sub-domains. Default: empty.","One domain per line or comma-separated, for example <code>yourcompany.co.uk</code>. Use <code>*.example.com</code> to include sub-domains. Default: empty."
-Storefront Messages,Storefront Messages
-Show Notice on Registration Form,Show Notice on Registration Form
-Registration Form Notice,Registration Form Notice
-Message After Registration,Message After Registration
-Shown instead of signing the customer in when the new account needs approval.,Shown instead of signing the customer in when the new account needs approval.
-Sign-in Message: Pending,Sign-in Message: Pending
-Shown on the login form and checkout login when a pending customer tries to sign in.,Shown on the login form and checkout login when a pending customer tries to sign in.
-Sign-in Message: Rejected,Sign-in Message: Rejected
+"Storefront Messages","Storefront Messages"
+"Show Notice on Registration Form","Show Notice on Registration Form"
+"Registration Form Notice","Registration Form Notice"
+"Message After Registration","Message After Registration"
+"Shown instead of signing the customer in when the new account needs approval.","Shown instead of signing the customer in when the new account needs approval."
+"Sign-in Message: Pending","Sign-in Message: Pending"
+"Shown on the login form and checkout login when a pending customer tries to sign in.","Shown on the login form and checkout login when a pending customer tries to sign in."
+"Sign-in Message: Rejected","Sign-in Message: Rejected"
 "After Registration, Go To","After Registration, Go To"
 "A CMS page explaining the approval process, or the login page. Default: Login page.","A CMS page explaining the approval process, or the login page. Default: Login page."
-Email to Shop Team,Email to Shop Team
-Email on New Account Waiting for Approval,Email on New Account Waiting for Approval
-Recipients,Recipients
+"Email to Shop Team","Email to Shop Team"
+"Email on New Account Waiting for Approval","Email on New Account Waiting for Approval"
+"Recipients","Recipients"
 "Comma-separated email addresses, for example sales@example.com. No email is sent while this is empty.","Comma-separated email addresses, for example sales@example.com. No email is sent while this is empty."
-Email Template,Email Template
-Emails to Customers,Emails to Customers
-Email Sender,Email Sender
-Also used as the sender of the email to the shop team. Default: General Contact.,Also used as the sender of the email to the shop team. Default: General Contact.
+"Email Template","Email Template"
+"Emails to Customers","Emails to Customers"
+"Email Sender","Email Sender"
+"Also used as the sender of the email to the shop team. Default: General Contact.","Also used as the sender of the email to the shop team. Default: General Contact."
 "Send ""Account Approved"" Email","Send ""Account Approved"" Email"
 """Account Approved"" Template","""Account Approved"" Template"
 "Send ""Account Not Approved"" Email","Send ""Account Not Approved"" Email"
 """Account Not Approved"" Template","""Account Not Approved"" Template"
-Include Rejection Reason in Email,Include Rejection Reason in Email
-The reason entered when rejecting from the customer page. Default: No.,The reason entered when rejecting from the customer page. Default: No.
-Reject the selected customer accounts? They are signed out and cannot sign in.,Reject the selected customer accounts? They are signed out and cannot sign in.
-Reject Accounts,Reject Accounts
+"Include Rejection Reason in Email","Include Rejection Reason in Email"
+"The reason entered when rejecting from the customer page. Default: No.","The reason entered when rejecting from the customer page. Default: No."
+"Reject the selected customer accounts? They are signed out and cannot sign in.","Reject the selected customer accounts? They are signed out and cannot sign in."
+"Reject Accounts","Reject Accounts"
 "Reject the selected customer accounts? They cannot sign in. To add a reason, use the Reject button on the customer page.","Reject the selected customer accounts? They cannot sign in. To add a reason, use the Reject button on the customer page."
-ID,ID
-Approval Status,Approval Status
-Rejection Reason,Rejection Reason
-Group,Group
-Company,Company
-Country,Country
-Registered,Registered
-1 customer account approved.,1 customer account approved.
-1 customer account rejected.,1 customer account rejected.
+"ID","ID"
+"Approval Status","Approval Status"
+"Rejection Reason","Rejection Reason"
+"Group","Group"
+"Company","Company"
+"Country","Country"
+"Registered","Registered"
+"1 customer account approved.","1 customer account approved."
+"1 customer account rejected.","1 customer account rejected."
 "1 customer account is waiting for approval. <a href=""%1"">Review it in the approval queue</a>.","1 customer account is waiting for approval. <a href=""%1"">Review it in the approval queue</a>."
-Pending,Pending
+"Pending","Pending"
 "New accounts that need approval wait here until you approve or reject them. Rejected accounts stay listed, so you can still approve them later.","New accounts that need approval wait here until you approve or reject them. Rejected accounts stay listed, so you can still approve them later."
-No accounts are waiting for approval,No accounts are waiting for approval
+"No accounts are waiting for approval","No accounts are waiting for approval"
 "New customer accounts that need approval appear here. Which accounts need approval, and whether the shop team is emailed about them, is set in the settings.","New customer accounts that need approval appear here. Which accounts need approval, and whether the shop team is emailed about them, is set in the settings."
-Open Settings,Open Settings
-New accounts in these groups are approved straight away. Default: none.,New accounts in these groups are approved straight away. Default: none.
+"Open Settings","Open Settings"
+"New accounts in these groups are approved straight away. Default: none.","New accounts in these groups are approved straight away. Default: none."
 "Shows the text below above the ""Create New Customer Account"" form. Default: Yes.","Shows the text below above the ""Create New Customer Account"" form. Default: Yes."
-Tells visitors before they register that accounts are reviewed.,Tells visitors before they register that accounts are reviewed.
-Shown on the login form when a rejected customer tries to sign in.,Shown on the login form when a rejected customer tries to sign in.
-Emails the recipients below when a new account is waiting for approval. Default: Yes.,Emails the recipients below when a new account is waiting for approval. Default: Yes.
+"Tells visitors before they register that accounts are reviewed.","Tells visitors before they register that accounts are reviewed."
+"Shown on the login form when a rejected customer tries to sign in.","Shown on the login form when a rejected customer tries to sign in."
+"Emails the recipients below when a new account is waiting for approval. Default: Yes.","Emails the recipients below when a new account is waiting for approval. Default: Yes."
 "To change the wording, create a template from this one under Marketing > Email Templates and select it here.","To change the wording, create a template from this one under Marketing > Email Templates and select it here."
-Tells the customer they can now sign in. Default: Yes.,Tells the customer they can now sign in. Default: Yes.
-Tells the customer the account was not approved. Default: Yes.,Tells the customer the account was not approved. Default: Yes.
-Reject this account? The customer is signed out and cannot sign in.,Reject this account? The customer is signed out and cannot sign in.
-Reason (optional; stored with the account and included in the email if enabled),Reason (optional; stored with the account and included in the email if enabled)
-Cancel,Cancel
+"Tells the customer they can now sign in. Default: Yes.","Tells the customer they can now sign in. Default: Yes."
+"Tells the customer the account was not approved. Default: Yes.","Tells the customer the account was not approved. Default: Yes."
+"Reject this account? The customer is signed out and cannot sign in.","Reject this account? The customer is signed out and cannot sign in."
+"Reason (optional; stored with the account and included in the email if enabled)","Reason (optional; stored with the account and included in the email if enabled)"
+"Cancel","Cancel"
 "Approve Account","Approve Account"
 "Approve this account? The customer can then sign in.","Approve this account? The customer can then sign in."
+"No accounts match the search or filters.","No accounts match the search or filters."
+"Clear the search and filters above to see every account waiting for approval or rejected.","Clear the search and filters above to see every account waiting for approval or rejected."
+"Approved accounts are listed in Customers > All Customers.","Approved accounts are listed in Customers > All Customers."

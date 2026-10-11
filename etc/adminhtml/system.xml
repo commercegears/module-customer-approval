@@ -42,6 +42,7 @@
                 </field>
                 <field id="auto_approve_domains" translate="label comment" type="textarea" sortOrder="50" showInDefault="1" showInWebsite="1" canRestore="1">
                     <label>Auto-approve Email Domains</label>
+                    <validate>maximum-length-2000 validate-no-html-tags</validate>
                     <comment><![CDATA[One domain per line or comma-separated, for example <code>yourcompany.co.uk</code>. Use <code>*.example.com</code> to include sub-domains. Default: empty.]]></comment>
                     <depends><field id="enabled">1</field></depends>
                 </field>
@@ -55,19 +56,23 @@
                 </field>
                 <field id="registration_notice" translate="label comment" type="textarea" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Registration Form Notice</label>
+                    <validate>maximum-length-1000 validate-no-html-tags</validate>
                     <comment>Tells visitors before they register that accounts are reviewed.</comment>
                     <depends><field id="show_registration_notice">1</field></depends>
                 </field>
                 <field id="registration_message" translate="label comment" type="textarea" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Message After Registration</label>
+                    <validate>maximum-length-1000 validate-no-html-tags</validate>
                     <comment>Shown instead of signing the customer in when the new account needs approval.</comment>
                 </field>
                 <field id="pending_message" translate="label comment" type="textarea" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Sign-in Message: Pending</label>
+                    <validate>maximum-length-1000 validate-no-html-tags</validate>
                     <comment>Shown on the login form and checkout login when a pending customer tries to sign in.</comment>
                 </field>
                 <field id="rejected_message" translate="label comment" type="textarea" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Sign-in Message: Rejected</label>
+                    <validate>maximum-length-1000 validate-no-html-tags</validate>
                     <comment>Shown on the login form when a rejected customer tries to sign in.</comment>
                 </field>
                 <field id="redirect_page" translate="label comment" type="select" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">

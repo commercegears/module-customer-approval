@@ -1,0 +1,30 @@
+<!--
+/**
+ * Softaware Customer Approval: Magento_Ui/grid/listing with queue-specific empty texts.
+ */
+-->
+<div class="admin__data-grid-wrap" data-role="grid-wrapper">
+    <table class="data-grid" data-role="grid">
+       <thead>
+            <tr each="data: getVisible(), as: '$col'" render="getHeader()"></tr>
+        </thead>
+        <tbody>
+            <tr if="rows" class="data-row" repeat="foreach: rows, item: '$row'" css="'_odd-row': $index % 2">
+                <td if="$row()" outerfasteach="data: getVisible(), as: '$col'"
+                    css="getFieldClass($row())" click="getFieldHandler($row())" template="getBody()"></td>
+            </tr>
+            <tr ifnot="hasData()" class="data-grid-tr-no-data">
+                <td attr="colspan: countVisible()">
+                    <div class="sw-ca-grid-empty">
+                        <p if="isFiltered()" class="sw-ca-grid-empty__title"
+                           translate="'No accounts match the search or filters.'"></p>
+                        <p if="isFiltered()" translate="'Clear the search and filters above to see every account waiting for approval or rejected.'"></p>
+                        <p ifnot="isFiltered()" class="sw-ca-grid-empty__title"
+                           translate="'No accounts are waiting for approval'"></p>
+                        <p ifnot="isFiltered()" translate="'Approved accounts are listed in Customers > All Customers.'"></p>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
