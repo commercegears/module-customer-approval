@@ -1,20 +1,20 @@
 <?php
 /**
- * Softaware Customer Approval
+ * CommerceGears Customer Approval
  *
  * Shown instead of the queue grid while no account is pending or rejected.
  *
- * @copyright Copyright (c) Softaware Commerce (https://www.softawarecommerce.co.uk/)
+ * @copyright Copyright (c) CommerceGears (https://www.commercegearscommerce.co.uk/)
  *
  * @var \Magento\Backend\Block\Template $block
  * @var \Magento\Framework\Escaper $escaper
  */
-$canConfigure = $block->getAuthorization()->isAllowed('Softaware_CustomerApproval::config');
+$canConfigure = $block->getAuthorization()->isAllowed('CommerceGears_CustomerApproval::config');
 ?>
 <div class="sw-ca-empty">
     <p class="sw-ca-empty__title"><?= $escaper->escapeHtml(__('No accounts are waiting for approval')) ?></p>
     <p class="sw-ca-empty__text"><?= $escaper->escapeHtml(__('New customer accounts that need approval appear here. Which accounts need approval, and whether the shop team is emailed about them, is set in the settings.')) ?></p>
     <?php if ($canConfigure): ?>
-        <a class="action-primary" href="<?= $escaper->escapeUrl($block->getUrl('adminhtml/system_config/edit', ['section' => 'softaware_customerapproval'])) ?>"><span><?= $escaper->escapeHtml(__('Open Settings')) ?></span></a>
+        <a class="action-primary" href="<?= $escaper->escapeUrl($block->getUrl('adminhtml/system_config/edit', ['section' => 'commercegears_customerapproval'])) ?>"><span><?= $escaper->escapeHtml(__('Open Settings')) ?></span></a>
     <?php endif; ?>
 </div>

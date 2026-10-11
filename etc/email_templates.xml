@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Email:etc/email_templates.xsd">
-    <template id="softaware_customerapproval_admin_notification_template" label="Customer Approval: New Account Waiting (to admin)"
-              file="admin_new_registration.html" type="html" module="Softaware_CustomerApproval" area="frontend"/>
-    <template id="softaware_customerapproval_customer_notification_approved_template" label="Customer Approval: Account Approved"
-              file="customer_approved.html" type="html" module="Softaware_CustomerApproval" area="frontend"/>
-    <template id="softaware_customerapproval_customer_notification_rejected_template" label="Customer Approval: Account Not Approved"
-              file="customer_rejected.html" type="html" module="Softaware_CustomerApproval" area="frontend"/>
+    <template id="commercegears_customerapproval_admin_notification_template" label="Customer Approval: New Account Waiting (to admin)"
+              file="admin_new_registration.html" type="html" module="CommerceGears_CustomerApproval" area="frontend"/>
+    <template id="commercegears_customerapproval_customer_notification_approved_template" label="Customer Approval: Account Approved"
+              file="customer_approved.html" type="html" module="CommerceGears_CustomerApproval" area="frontend"/>
+    <template id="commercegears_customerapproval_customer_notification_rejected_template" label="Customer Approval: Account Not Approved"
+              file="customer_rejected.html" type="html" module="CommerceGears_CustomerApproval" area="frontend"/>
 </config>

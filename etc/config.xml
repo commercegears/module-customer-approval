@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
     <default>
-        <softaware_customerapproval>
+        <commercegears_customerapproval>
             <general>
                 <enabled>0</enabled>
                 <mode>all</mode>
@@ -20,16 +20,16 @@
             <admin_notification>
                 <enabled>1</enabled>
                 <recipients/>
-                <template>softaware_customerapproval_admin_notification_template</template>
+                <template>commercegears_customerapproval_admin_notification_template</template>
             </admin_notification>
             <customer_notification>
                 <sender>general</sender>
                 <approved_enabled>1</approved_enabled>
-                <approved_template>softaware_customerapproval_customer_notification_approved_template</approved_template>
+                <approved_template>commercegears_customerapproval_customer_notification_approved_template</approved_template>
                 <rejected_enabled>1</rejected_enabled>
-                <rejected_template>softaware_customerapproval_customer_notification_rejected_template</rejected_template>
+                <rejected_template>commercegears_customerapproval_customer_notification_rejected_template</rejected_template>
                 <include_reason>0</include_reason>
             </customer_notification>
-        </softaware_customerapproval>
+        </commercegears_customerapproval>
     </default>
 </config>

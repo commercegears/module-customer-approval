@@ -1,7 +1,7 @@
 # Customer Approval for Magento 2: FAQ
 
 **Is approval switched on straight after installing?**
-No. The module is installed switched off, so it does not suddenly block registrations. Turn it on per website under Stores > Configuration > Softaware > Customer Approval > Approval Rules > Enabled. Customers that exist when the module is installed are approved.
+No. The module is installed switched off, so it does not suddenly block registrations. Turn it on per website under Stores > Configuration > CommerceGears > Customer Approval > Approval Rules > Enabled. Customers that exist when the module is installed are approved.
 
 **Can only some customer groups need approval?**
 Yes. Set "Require Approval For" to selected customer groups and choose the groups. The group is the one the new account is assigned to, by default the "Default Group" under Customers > Customer Configuration > Create New Account Options. With "All new accounts" you can instead pick groups that are approved straight away.
@@ -22,7 +22,7 @@ Yes. The registration notice has a Hyvä template, and sign-in and registration 
 No. Accounts created by an admin, through the admin or integration API, or from the command line are approved straight away.
 
 **How do I approve or reject accounts?**
-In the Approval Queue (Softaware > Customer Approval > Approval Queue), with the Approve and Reject buttons on the customer page, with the "Approve Account" and "Reject Account" mass actions in Customers > All Customers, with the admin REST API or with the `softaware:customer-approval:status` command.
+In the Approval Queue (CommerceGears > Customer Approval > Approval Queue), with the Approve and Reject buttons on the customer page, with the "Approve Account" and "Reject Account" mass actions in Customers > All Customers, with the admin REST API or with the `commercegears:customer-approval:status` command.
 
 **Can I tell the customer why the account was rejected?**
 Yes. The Reject button on the customer page asks for an optional reason. With "Include Rejection Reason in Email" on, the reason is included in the "Account Not Approved" email.

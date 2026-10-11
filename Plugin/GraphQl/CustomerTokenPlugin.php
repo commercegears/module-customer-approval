@@ -1,15 +1,15 @@
 <?php
 /**
- * Softaware Customer Approval
+ * CommerceGears Customer Approval
  *
- * @copyright Copyright (c) Softaware Commerce (https://www.softawarecommerce.co.uk/)
+ * @copyright Copyright (c) CommerceGears (https://www.commercegearscommerce.co.uk/)
  */
 declare(strict_types=1);
 
-namespace Softaware\CustomerApproval\Plugin\GraphQl;
+namespace CommerceGears\CustomerApproval\Plugin\GraphQl;
 
 use Magento\Integration\Model\Oauth\Token;
-use Softaware\CustomerApproval\Model\LoginGuard;
+use CommerceGears\CustomerApproval\Model\LoginGuard;
 
 /**
  * GraphQL "generateCustomerTokenAsAdmin" (Login as Customer for headless storefronts) creates a customer token
@@ -25,7 +25,7 @@ class CustomerTokenPlugin
     /**
      * @param int $userId
      * @return null
-     * @throws \Softaware\CustomerApproval\Exception\NotApprovedException
+     * @throws \CommerceGears\CustomerApproval\Exception\NotApprovedException
      */
     public function beforeCreateCustomerToken(Token $subject, $userId)
     {

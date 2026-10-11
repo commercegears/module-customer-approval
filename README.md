@@ -1,6 +1,6 @@
-# Softaware Customer Approval
+# CommerceGears Customer Approval
 
-`softaware/module-customer-approval` (Magento module `Softaware_CustomerApproval`)
+`commercegears/module-customer-approval` (Magento module `CommerceGears_CustomerApproval`)
 
 New customer accounts wait for approval by the shop team before they can sign in. Works with Luma and Hyvä.
 
@@ -35,47 +35,47 @@ Documentation: [User guide](docs/user-guide.md) · [FAQ](docs/faq.md)
 
 ## Where in the admin
 
-- Softaware > Customer Approval > Approval Queue (with pending count) / Settings
+- CommerceGears > Customer Approval > Approval Queue (with pending count) / Settings
 - Customers > All Customers: "Approval Status" column (status badges), Actions > Approve Account / Reject Account
 - Customer edit page: Approve / Reject buttons, status notice
-- Settings: Stores > Configuration > Softaware > Customer Approval (`softaware_customerapproval/*`)
-- ACL: Softaware > Customer Approval > Approve and Reject Customers / Settings
+- Settings: Stores > Configuration > CommerceGears > Customer Approval (`commercegears_customerapproval/*`)
+- ACL: CommerceGears > Customer Approval > Approve and Reject Customers / Settings
 
 ## Configuration
 
 | Path | Scope | Default |
 |---|---|---|
-| `softaware_customerapproval/general/enabled` | website | 0 |
-| `softaware_customerapproval/general/mode` (`all` / `groups`) | website | all |
-| `softaware_customerapproval/general/groups` | website | – |
-| `softaware_customerapproval/general/auto_approve_groups` | website | – |
-| `softaware_customerapproval/general/auto_approve_domains` | website | – |
-| `softaware_customerapproval/frontend/*` (notice, messages, redirect page) | store view | see config.xml |
-| `softaware_customerapproval/admin_notification/*` (enabled, recipients, template) | website | on, no recipients |
-| `softaware_customerapproval/customer_notification/*` (sender, approved/rejected emails, include reason) | store view | on |
+| `commercegears_customerapproval/general/enabled` | website | 0 |
+| `commercegears_customerapproval/general/mode` (`all` / `groups`) | website | all |
+| `commercegears_customerapproval/general/groups` | website | – |
+| `commercegears_customerapproval/general/auto_approve_groups` | website | – |
+| `commercegears_customerapproval/general/auto_approve_domains` | website | – |
+| `commercegears_customerapproval/frontend/*` (notice, messages, redirect page) | store view | see config.xml |
+| `commercegears_customerapproval/admin_notification/*` (enabled, recipients, template) | website | on, no recipients |
+| `commercegears_customerapproval/customer_notification/*` (sender, approved/rejected emails, include reason) | store view | on |
 
 After installing, run `bin/magento indexer:reindex customer_grid` so the customer grid gets the new column.
 
 ## CLI
 
 ```
-bin/magento softaware:customer-approval:status                          # list pending accounts
-bin/magento softaware:customer-approval:status --status=rejected
-bin/magento softaware:customer-approval:status jane@example.com --set=approved [--no-email]
-bin/magento softaware:customer-approval:status 42 --set=rejected --reason="Trade customers only"
-bin/magento softaware:customer-approval:status 42 --set=pending
+bin/magento commercegears:customer-approval:status                          # list pending accounts
+bin/magento commercegears:customer-approval:status --status=rejected
+bin/magento commercegears:customer-approval:status jane@example.com --set=approved [--no-email]
+bin/magento commercegears:customer-approval:status 42 --set=rejected --reason="Trade customers only"
+bin/magento commercegears:customer-approval:status 42 --set=pending
 ```
 
-## REST API (admin token, ACL `Softaware_CustomerApproval::manage`)
+## REST API (admin token, ACL `CommerceGears_CustomerApproval::manage`)
 
 ```
-GET  /V1/softaware/customer-approval/:customerId            -> "pending" | "approved" | "rejected"
-POST /V1/softaware/customer-approval/:customerId/approve     {"notify": true}
-POST /V1/softaware/customer-approval/:customerId/reject      {"reason": "...", "notify": true}
-POST /V1/softaware/customer-approval/:customerId/pending
+GET  /V1/commercegears/customer-approval/:customerId            -> "pending" | "approved" | "rejected"
+POST /V1/commercegears/customer-approval/:customerId/approve     {"notify": true}
+POST /V1/commercegears/customer-approval/:customerId/reject      {"reason": "...", "notify": true}
+POST /V1/commercegears/customer-approval/:customerId/pending
 ```
 
-Event `softaware_customer_approval_status_changed` (customer, previous_status, status, reason) is dispatched on
+Event `commercegears_customer_approval_status_changed` (customer, previous_status, status, reason) is dispatched on
 every change.
 
 ## Hyvä
@@ -87,7 +87,7 @@ registration use Magento's controllers in both themes; checkout uses the Luma ch
 ## Compatibility
 
 Magento Open Source / Adobe Commerce 2.4.7–2.4.9, PHP 8.2–8.5, Luma and Hyvä 1.3+.
-Requires `softaware/module-core` ^1.3.
+Requires `commercegears/module-core` ^1.3.
 
 ## Limitations
 

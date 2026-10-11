@@ -1,12 +1,12 @@
 <?php
 /**
- * Softaware Customer Approval
+ * CommerceGears Customer Approval
  *
- * @copyright Copyright (c) Softaware Commerce (https://www.softawarecommerce.co.uk/)
+ * @copyright Copyright (c) CommerceGears (https://www.commercegearscommerce.co.uk/)
  */
 declare(strict_types=1);
 
-namespace Softaware\CustomerApproval\Controller\Adminhtml\Queue;
+namespace CommerceGears\CustomerApproval\Controller\Adminhtml\Queue;
 
 use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
@@ -14,15 +14,15 @@ use Magento\Framework\App\Action\HttpGetActionInterface;
 use Magento\Framework\App\ResourceConnection;
 use Magento\Framework\Controller\ResultFactory;
 use Magento\Framework\View\Result\Page;
-use Softaware\CustomerApproval\Api\ApprovalManagementInterface as Approval;
-use Softaware\CustomerApproval\Model\ResourceModel\StatusStorage;
+use CommerceGears\CustomerApproval\Api\ApprovalManagementInterface as Approval;
+use CommerceGears\CustomerApproval\Model\ResourceModel\StatusStorage;
 
 /**
  * Approval queue: pending and rejected accounts. Shows an explanation instead of an empty table.
  */
 class Index extends Action implements HttpGetActionInterface
 {
-    public const ADMIN_RESOURCE = 'Softaware_CustomerApproval::manage';
+    public const ADMIN_RESOURCE = 'CommerceGears_CustomerApproval::manage';
 
     public function __construct(
         Context $context,
@@ -36,9 +36,9 @@ class Index extends Action implements HttpGetActionInterface
         /** @var Page $page */
         $page = $this->resultFactory->create(ResultFactory::TYPE_PAGE);
         if (!$this->hasQueuedAccounts()) {
-            $page->addHandle('softaware_customerapproval_queue_index_empty');
+            $page->addHandle('commercegears_customerapproval_queue_index_empty');
         }
-        $page->setActiveMenu('Softaware_CustomerApproval::queue');
+        $page->setActiveMenu('CommerceGears_CustomerApproval::queue');
         $page->getConfig()->getTitle()->prepend(__('Customer Approval Queue'));
         return $page;
     }

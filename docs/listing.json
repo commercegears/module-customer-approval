@@ -103,7 +103,7 @@
                 "Approved and not approved emails to the customer",
                 "Rejecting signs the customer out and revokes tokens",
                 "Admin REST API and CLI command",
-                "Event softaware_customer_approval_status_changed"
+                "Event commercegears_customer_approval_status_changed"
             ]
         }
     ],
@@ -111,7 +111,7 @@
         "admin": [
             {
                 "label": "Admin panel",
-                "url": "https://demo.softawarecommerce.com/try-admin/customer-approval",
+                "url": "https://demo.commercegears.com/try-admin/customer-approval",
                 "image": "docs/images/admin-queue.png"
             }
         ]

@@ -1,23 +1,23 @@
 <?php
 /**
- * Softaware Customer Approval
+ * CommerceGears Customer Approval
  *
- * @copyright Copyright (c) Softaware Commerce (https://www.softawarecommerce.co.uk/)
+ * @copyright Copyright (c) CommerceGears (https://www.commercegearscommerce.co.uk/)
  */
 declare(strict_types=1);
 
-namespace Softaware\CustomerApproval\Model;
+namespace CommerceGears\CustomerApproval\Model;
 
 use Magento\Framework\App\CacheInterface;
-use Softaware\CustomerApproval\Api\ApprovalManagementInterface as Approval;
-use Softaware\CustomerApproval\Model\ResourceModel\StatusStorage;
+use CommerceGears\CustomerApproval\Api\ApprovalManagementInterface as Approval;
+use CommerceGears\CustomerApproval\Model\ResourceModel\StatusStorage;
 
 /**
  * Number of accounts waiting for approval, cached for 5 minutes (shown in the admin menu and notice bar).
  */
 class PendingCounter
 {
-    private const CACHE_KEY = 'softaware_customerapproval_pending_count';
+    private const CACHE_KEY = 'commercegears_customerapproval_pending_count';
     private const CACHE_LIFETIME = 300;
 
     private ?int $count = null;

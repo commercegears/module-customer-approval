@@ -1,19 +1,19 @@
 <?php
 /**
- * Softaware Customer Approval
+ * CommerceGears Customer Approval
  *
- * @copyright Copyright (c) Softaware Commerce (https://www.softawarecommerce.co.uk/)
+ * @copyright Copyright (c) CommerceGears (https://www.commercegearscommerce.co.uk/)
  */
 declare(strict_types=1);
 
-namespace Softaware\CustomerApproval\Block\Adminhtml\Edit;
+namespace CommerceGears\CustomerApproval\Block\Adminhtml\Edit;
 
 use Magento\Backend\Block\Widget\Context;
 use Magento\Framework\AuthorizationInterface;
 use Magento\Framework\Registry;
 use Magento\Framework\View\Element\UiComponent\Control\ButtonProviderInterface;
-use Softaware\CustomerApproval\Api\ApprovalManagementInterface as Approval;
-use Softaware\CustomerApproval\Model\ResourceModel\StatusStorage;
+use CommerceGears\CustomerApproval\Api\ApprovalManagementInterface as Approval;
+use CommerceGears\CustomerApproval\Model\ResourceModel\StatusStorage;
 
 /**
  * Shared logic of the "Approve" and "Reject" buttons on the customer edit page.
@@ -32,7 +32,7 @@ abstract class ApprovalButtonData extends \Magento\Customer\Block\Adminhtml\Edit
     protected function getCurrentStatus(): ?string
     {
         $customerId = (int)$this->getCustomerId();
-        if (!$customerId || !$this->authorization->isAllowed('Softaware_CustomerApproval::manage')) {
+        if (!$customerId || !$this->authorization->isAllowed('CommerceGears_CustomerApproval::manage')) {
             return null;
         }
         return $this->storage->getStatus($customerId) ?? Approval::STATUS_APPROVED;
@@ -50,8 +50,8 @@ abstract class ApprovalButtonData extends \Magento\Customer\Block\Adminhtml\Edit
             'on_click' => '',
             'data_attribute' => [
                 'mage-init' => [
-                    'Softaware_CustomerApproval/js/approval-action' => $widgetOptions + [
-                        'url' => $this->getUrl('softaware_customerapproval/customer/' . $action, ['id' => $this->getCustomerId()]),
+                    'CommerceGears_CustomerApproval/js/approval-action' => $widgetOptions + [
+                        'url' => $this->getUrl('commercegears_customerapproval/customer/' . $action, ['id' => $this->getCustomerId()]),
                     ],
                 ],
             ],

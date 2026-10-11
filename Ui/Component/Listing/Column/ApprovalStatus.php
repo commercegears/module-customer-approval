@@ -1,19 +1,19 @@
 <?php
 /**
- * Softaware Customer Approval
+ * CommerceGears Customer Approval
  *
- * @copyright Copyright (c) Softaware Commerce (https://www.softawarecommerce.co.uk/)
+ * @copyright Copyright (c) CommerceGears (https://www.commercegearscommerce.co.uk/)
  */
 declare(strict_types=1);
 
-namespace Softaware\CustomerApproval\Ui\Component\Listing\Column;
+namespace CommerceGears\CustomerApproval\Ui\Component\Listing\Column;
 
 use Magento\Framework\Escaper;
 use Magento\Framework\View\Element\UiComponent\ContextInterface;
 use Magento\Framework\View\Element\UiComponentFactory;
 use Magento\Ui\Component\Listing\Columns\Column;
-use Softaware\CustomerApproval\Api\ApprovalManagementInterface as Approval;
-use Softaware\CustomerApproval\Model\Attribute\Source\Status;
+use CommerceGears\CustomerApproval\Api\ApprovalManagementInterface as Approval;
+use CommerceGears\CustomerApproval\Model\Attribute\Source\Status;
 
 /**
  * Shows the approval status as a Magento grid severity badge.

@@ -1,12 +1,12 @@
 <?php
 /**
- * Softaware Customer Approval
+ * CommerceGears Customer Approval
  *
- * @copyright Copyright (c) Softaware Commerce (https://www.softawarecommerce.co.uk/)
+ * @copyright Copyright (c) CommerceGears (https://www.commercegearscommerce.co.uk/)
  */
 declare(strict_types=1);
 
-namespace Softaware\CustomerApproval\Model;
+namespace CommerceGears\CustomerApproval\Model;
 
 use Magento\Customer\Api\CustomerRepositoryInterface;
 use Magento\Customer\Api\Data\CustomerInterface;
@@ -18,8 +18,8 @@ use Magento\Framework\Event\ManagerInterface as EventManager;
 use Magento\Framework\Indexer\IndexerRegistry;
 use Magento\Integration\Api\CustomerTokenServiceInterface;
 use Psr\Log\LoggerInterface;
-use Softaware\CustomerApproval\Api\ApprovalManagementInterface;
-use Softaware\CustomerApproval\Model\ResourceModel\StatusStorage;
+use CommerceGears\CustomerApproval\Api\ApprovalManagementInterface;
+use CommerceGears\CustomerApproval\Model\ResourceModel\StatusStorage;
 
 class ApprovalManagement implements ApprovalManagementInterface
 {
@@ -87,7 +87,7 @@ class ApprovalManagement implements ApprovalManagementInterface
         try {
             $this->sessionCleaner->clearFor($customerId);
         } catch (\Throwable $e) {
-            $this->logger->warning('Softaware_CustomerApproval: could not clear sessions: ' . $e->getMessage());
+            $this->logger->warning('CommerceGears_CustomerApproval: could not clear sessions: ' . $e->getMessage());
         }
         try {
             $this->tokenService->revokeCustomerAccessToken($customerId);
@@ -102,7 +102,7 @@ class ApprovalManagement implements ApprovalManagementInterface
                 $connection->delete($table, ['customer_id = ?' => $customerId]);
             }
         } catch (\Throwable $e) {
-            $this->logger->warning('Softaware_CustomerApproval: could not clear persistent sessions: ' . $e->getMessage());
+            $this->logger->warning('CommerceGears_CustomerApproval: could not clear persistent sessions: ' . $e->getMessage());
         }
     }
 
@@ -114,9 +114,9 @@ class ApprovalManagement implements ApprovalManagementInterface
         try {
             $this->indexerRegistry->get(Customer::CUSTOMER_GRID_INDEXER_ID)->reindexRow($customerId);
         } catch (\Throwable $e) {
-            $this->logger->warning('Softaware_CustomerApproval: customer grid row not reindexed: ' . $e->getMessage());
+            $this->logger->warning('CommerceGears_CustomerApproval: customer grid row not reindexed: ' . $e->getMessage());
         }
-        $this->eventManager->dispatch('softaware_customer_approval_status_changed', [
+        $this->eventManager->dispatch('commercegears_customer_approval_status_changed', [
             'customer' => $customer,
             'previous_status' => $previous,
             'status' => $status,

@@ -1,20 +1,20 @@
 <?php
 /**
- * Softaware Customer Approval
+ * CommerceGears Customer Approval
  *
- * @copyright Copyright (c) Softaware Commerce (https://www.softawarecommerce.co.uk/)
+ * @copyright Copyright (c) CommerceGears (https://www.commercegearscommerce.co.uk/)
  */
 declare(strict_types=1);
 
-namespace Softaware\CustomerApproval\Console\Command;
+namespace CommerceGears\CustomerApproval\Console\Command;
 
 use Magento\Customer\Api\CustomerRepositoryInterface;
 use Magento\Customer\Model\ResourceModel\Customer\CollectionFactory;
 use Magento\Framework\App\Area;
 use Magento\Framework\App\State;
 use Magento\Framework\Exception\LocalizedException;
-use Softaware\CustomerApproval\Api\ApprovalManagementInterface as Approval;
-use Softaware\CustomerApproval\Model\ResourceModel\StatusStorage;
+use CommerceGears\CustomerApproval\Api\ApprovalManagementInterface as Approval;
+use CommerceGears\CustomerApproval\Model\ResourceModel\StatusStorage;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Helper\Table;
 use Symfony\Component\Console\Input\InputArgument;
@@ -23,9 +23,9 @@ use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
 /**
- * bin/magento softaware:customer-approval:status                       list pending accounts
- * bin/magento softaware:customer-approval:status --status=rejected     list rejected accounts
- * bin/magento softaware:customer-approval:status 42 --set=approved     approve customer 42 (ID or email)
+ * bin/magento commercegears:customer-approval:status                       list pending accounts
+ * bin/magento commercegears:customer-approval:status --status=rejected     list rejected accounts
+ * bin/magento commercegears:customer-approval:status 42 --set=approved     approve customer 42 (ID or email)
  */
 class StatusCommand extends Command
 {
@@ -41,7 +41,7 @@ class StatusCommand extends Command
 
     protected function configure(): void
     {
-        $this->setName('softaware:customer-approval:status')
+        $this->setName('commercegears:customer-approval:status')
             ->setDescription('List customer accounts by approval status, or approve / reject / reset one')
             ->addArgument('customer', InputArgument::OPTIONAL, 'Customer ID or email address')
             ->addOption('status', null, InputOption::VALUE_REQUIRED, 'List filter: pending, approved or rejected', Approval::STATUS_PENDING)

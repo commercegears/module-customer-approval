@@ -1,10 +1,10 @@
 <?php
 /**
- * Softaware Customer Approval: notice on the Luma registration form.
+ * CommerceGears Customer Approval: notice on the Luma registration form.
  *
  * @var \Magento\Framework\View\Element\Template $block
  * @var \Magento\Framework\Escaper $escaper
- * @var \Softaware\CustomerApproval\ViewModel\RegistrationNotice $viewModel
+ * @var \CommerceGears\CustomerApproval\ViewModel\RegistrationNotice $viewModel
  */
 $viewModel = $block->getData('view_model');
 $notice = $viewModel->getNotice();
@@ -12,6 +12,6 @@ if ($notice === '') {
     return;
 }
 ?>
-<div class="message info softaware-approval-notice" role="note">
+<div class="message info commercegears-approval-notice" role="note">
     <div><?= $escaper->escapeHtml($notice) ?></div>
 </div>

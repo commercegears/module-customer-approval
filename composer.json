@@ -1,12 +1,12 @@
 {
-    "name": "softaware/module-customer-approval",
+    "name": "commercegears/module-customer-approval",
     "description": "Customer account approval for Magento 2 (Luma and Hyvä): new registrations wait for admin approval, with auto-approve rules, admin and customer emails, and REST/GraphQL login blocking.",
     "type": "magento2-module",
     "license": "proprietary",
     "require": {
         "php": "~8.2.0||~8.3.0||~8.4.0||~8.5.0",
         "magento/framework": "~103.0.7",
-        "softaware/module-core": "^1.3",
+        "commercegears/module-core": "^2.0",
         "magento/module-authorization": "*",
         "magento/module-backend": "*",
         "magento/module-cms": "*",
@@ -26,7 +26,10 @@
             "registration.php"
         ],
         "psr-4": {
-            "Softaware\\CustomerApproval\\": ""
+            "CommerceGears\\CustomerApproval\\": ""
         }
+    },
+    "replace": {
+        "softaware/module-customer-approval": "*"
     }
 }

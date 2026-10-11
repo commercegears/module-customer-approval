@@ -1,26 +1,26 @@
 <?php
 /**
- * Softaware Customer Approval
+ * CommerceGears Customer Approval
  *
- * @copyright Copyright (c) Softaware Commerce (https://www.softawarecommerce.co.uk/)
+ * @copyright Copyright (c) CommerceGears (https://www.commercegearscommerce.co.uk/)
  */
 declare(strict_types=1);
 
-namespace Softaware\CustomerApproval\Model;
+namespace CommerceGears\CustomerApproval\Model;
 
 use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Store\Model\ScopeInterface;
 use Magento\Store\Model\StoreManagerInterface;
 
 /**
- * Settings under Stores > Configuration > Softaware > Customer Approval.
+ * Settings under Stores > Configuration > CommerceGears > Customer Approval.
  */
 class Config
 {
     public const MODE_ALL = 'all';
     public const MODE_GROUPS = 'groups';
 
-    private const PREFIX = 'softaware_customerapproval/';
+    private const PREFIX = 'commercegears_customerapproval/';
 
     public function __construct(
         private readonly ScopeConfigInterface $scopeConfig,

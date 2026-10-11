@@ -1,17 +1,17 @@
 <?php
 /**
- * Softaware Customer Approval
+ * CommerceGears Customer Approval
  *
- * @copyright Copyright (c) Softaware Commerce (https://www.softawarecommerce.co.uk/)
+ * @copyright Copyright (c) CommerceGears (https://www.commercegearscommerce.co.uk/)
  */
 declare(strict_types=1);
 
-namespace Softaware\CustomerApproval\Model;
+namespace CommerceGears\CustomerApproval\Model;
 
 use Magento\Customer\Api\Data\CustomerInterface;
 use Magento\Customer\Api\GroupManagementInterface;
 use Magento\Store\Model\StoreManagerInterface;
-use Softaware\CustomerApproval\Api\ApprovalManagementInterface as Approval;
+use CommerceGears\CustomerApproval\Api\ApprovalManagementInterface as Approval;
 
 /**
  * Decides the initial status of a new account from the website's rules.

@@ -1,12 +1,12 @@
 <?php
 /**
- * Softaware Customer Approval
+ * CommerceGears Customer Approval
  *
- * @copyright Copyright (c) Softaware Commerce (https://www.softawarecommerce.co.uk/)
+ * @copyright Copyright (c) CommerceGears (https://www.commercegearscommerce.co.uk/)
  */
 declare(strict_types=1);
 
-namespace Softaware\CustomerApproval\Model\Config\Source;
+namespace CommerceGears\CustomerApproval\Model\Config\Source;
 
 use Magento\Cms\Model\Config\Source\Page;
 use Magento\Framework\Data\OptionSourceInterface;

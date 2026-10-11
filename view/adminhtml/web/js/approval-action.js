@@ -1,5 +1,5 @@
 /**
- * Softaware Customer Approval: approve / reject buttons on the customer edit page.
+ * CommerceGears Customer Approval: approve / reject buttons on the customer edit page.
  * Confirms (with an optional reason for rejections) and posts with the admin form key.
  */
 define([

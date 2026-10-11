@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
     <menu>
-        <add id="Softaware_CustomerApproval::approval" title="Customer Approval" translate="title" module="Softaware_CustomerApproval"
-             sortOrder="45" parent="Softaware_Core::core" resource="Softaware_CustomerApproval::approval"/>
-        <add id="Softaware_CustomerApproval::queue" title="Approval Queue" translate="title" module="Softaware_CustomerApproval"
-             sortOrder="10" parent="Softaware_CustomerApproval::approval" action="softaware_customerapproval/queue/index"
-             resource="Softaware_CustomerApproval::manage"/>
-        <add id="Softaware_CustomerApproval::config" title="Settings" translate="title" module="Softaware_CustomerApproval"
-             sortOrder="20" parent="Softaware_CustomerApproval::approval"
-             action="adminhtml/system_config/edit/section/softaware_customerapproval" resource="Softaware_CustomerApproval::config"/>
+        <add id="CommerceGears_CustomerApproval::approval" title="Customer Approval" translate="title" module="CommerceGears_CustomerApproval"
+             sortOrder="45" parent="CommerceGears_Core::core" resource="CommerceGears_CustomerApproval::approval"/>
+        <add id="CommerceGears_CustomerApproval::queue" title="Approval Queue" translate="title" module="CommerceGears_CustomerApproval"
+             sortOrder="10" parent="CommerceGears_CustomerApproval::approval" action="commercegears_customerapproval/queue/index"
+             resource="CommerceGears_CustomerApproval::manage"/>
+        <add id="CommerceGears_CustomerApproval::config" title="Settings" translate="title" module="CommerceGears_CustomerApproval"
+             sortOrder="20" parent="CommerceGears_CustomerApproval::approval"
+             action="adminhtml/system_config/edit/section/commercegears_customerapproval" resource="CommerceGears_CustomerApproval::config"/>
     </menu>
 </config>

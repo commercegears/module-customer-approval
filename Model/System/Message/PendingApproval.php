@@ -1,19 +1,19 @@
 <?php
 /**
- * Softaware Customer Approval
+ * CommerceGears Customer Approval
  *
- * @copyright Copyright (c) Softaware Commerce (https://www.softawarecommerce.co.uk/)
+ * @copyright Copyright (c) CommerceGears (https://www.commercegearscommerce.co.uk/)
  */
 declare(strict_types=1);
 
-namespace Softaware\CustomerApproval\Model\System\Message;
+namespace CommerceGears\CustomerApproval\Model\System\Message;
 
 use Magento\Framework\AuthorizationInterface;
 use Magento\Framework\Escaper;
 use Magento\Framework\Notification\MessageInterface;
 use Magento\Framework\UrlInterface;
-use Softaware\CustomerApproval\Model\Config;
-use Softaware\CustomerApproval\Model\PendingCounter;
+use CommerceGears\CustomerApproval\Model\Config;
+use CommerceGears\CustomerApproval\Model\PendingCounter;
 
 /**
  * Admin notice bar: "N customer accounts are waiting for approval".
@@ -31,12 +31,12 @@ class PendingApproval implements MessageInterface
 
     public function getIdentity(): string
     {
-        return 'softaware_customerapproval_pending';
+        return 'commercegears_customerapproval_pending';
     }
 
     public function isDisplayed(): bool
     {
-        return $this->authorization->isAllowed('Softaware_CustomerApproval::manage')
+        return $this->authorization->isAllowed('CommerceGears_CustomerApproval::manage')
             && $this->config->isEnabledAnywhere()
             && $this->pendingCounter->get() > 0;
     }
@@ -44,7 +44,7 @@ class PendingApproval implements MessageInterface
     public function getText(): string
     {
         $count = $this->pendingCounter->get();
-        $url = $this->escaper->escapeUrl($this->urlBuilder->getUrl('softaware_customerapproval/queue/index'));
+        $url = $this->escaper->escapeUrl($this->urlBuilder->getUrl('commercegears_customerapproval/queue/index'));
         if ($count === 1) {
             return (string)__('1 customer account is waiting for approval. <a href="%1">Review it in the approval queue</a>.', $url);
         }

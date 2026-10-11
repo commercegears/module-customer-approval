@@ -1,18 +1,18 @@
 <?php
 /**
- * Softaware Customer Approval
+ * CommerceGears Customer Approval
  *
- * @copyright Copyright (c) Softaware Commerce (https://www.softawarecommerce.co.uk/)
+ * @copyright Copyright (c) CommerceGears (https://www.commercegearscommerce.co.uk/)
  */
 declare(strict_types=1);
 
-namespace Softaware\CustomerApproval\Model\Attribute\Source;
+namespace CommerceGears\CustomerApproval\Model\Attribute\Source;
 
 use Magento\Eav\Model\Entity\Attribute\Source\AbstractSource;
-use Softaware\CustomerApproval\Api\ApprovalManagementInterface as Approval;
+use CommerceGears\CustomerApproval\Api\ApprovalManagementInterface as Approval;
 
 /**
- * Options of the customer attribute "softaware_approval_status" (also used by the grids' filters).
+ * Options of the customer attribute "commercegears_approval_status" (also used by the grids' filters).
  */
 class Status extends AbstractSource
 {

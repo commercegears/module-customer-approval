@@ -1,12 +1,12 @@
 <?php
 /**
- * Softaware Customer Approval
+ * CommerceGears Customer Approval
  *
- * @copyright Copyright (c) Softaware Commerce (https://www.softawarecommerce.co.uk/)
+ * @copyright Copyright (c) CommerceGears (https://www.commercegearscommerce.co.uk/)
  */
 declare(strict_types=1);
 
-namespace Softaware\CustomerApproval\Plugin\Frontend;
+namespace CommerceGears\CustomerApproval\Plugin\Frontend;
 
 use Magento\Customer\Api\AccountManagementInterface;
 use Magento\Customer\Controller\Account\CreatePost;
@@ -16,9 +16,9 @@ use Magento\Framework\Message\ManagerInterface as MessageManager;
 use Magento\Framework\Message\MessageInterface;
 use Magento\Framework\UrlInterface;
 use Magento\Store\Model\StoreManagerInterface;
-use Softaware\CustomerApproval\Model\Config;
-use Softaware\CustomerApproval\Model\LoginGuard;
-use Softaware\CustomerApproval\Model\RegistrationState;
+use CommerceGears\CustomerApproval\Model\Config;
+use CommerceGears\CustomerApproval\Model\LoginGuard;
+use CommerceGears\CustomerApproval\Model\RegistrationState;
 
 /**
  * After a registration that needs approval: replace "Thank you for registering" (the customer is not signed in)

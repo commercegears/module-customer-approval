@@ -1,12 +1,12 @@
 <?php
 /**
- * Softaware Customer Approval
+ * CommerceGears Customer Approval
  *
- * @copyright Copyright (c) Softaware Commerce (https://www.softawarecommerce.co.uk/)
+ * @copyright Copyright (c) CommerceGears (https://www.commercegearscommerce.co.uk/)
  */
 declare(strict_types=1);
 
-namespace Softaware\CustomerApproval\Model;
+namespace CommerceGears\CustomerApproval\Model;
 
 use Magento\Customer\Api\Data\CustomerInterface;
 use Magento\Customer\Api\GroupRepositoryInterface;
@@ -50,7 +50,7 @@ class Notifier
             'website_name' => $this->getWebsiteName($websiteId),
             'created_at' => (string)$customer->getCreatedAt(),
             'customer_url' => $this->adminUrl->get('customer/index/edit', ['id' => (int)$customer->getId()]),
-            'queue_url' => $this->adminUrl->get('softaware_customerapproval/queue/index'),
+            'queue_url' => $this->adminUrl->get('commercegears_customerapproval/queue/index'),
         ]);
     }
 
@@ -125,7 +125,7 @@ class Notifier
             }
             $this->transportBuilder->getTransport()->sendMessage();
         } catch (\Throwable $e) {
-            $this->logger->error('Softaware_CustomerApproval: could not send email ' . $templateId . ': ' . $e->getMessage());
+            $this->logger->error('CommerceGears_CustomerApproval: could not send email ' . $templateId . ': ' . $e->getMessage());
         } finally {
             $this->inlineTranslation->resume();
         }

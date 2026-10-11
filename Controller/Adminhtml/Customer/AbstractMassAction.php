@@ -1,12 +1,12 @@
 <?php
 /**
- * Softaware Customer Approval
+ * CommerceGears Customer Approval
  *
- * @copyright Copyright (c) Softaware Commerce (https://www.softawarecommerce.co.uk/)
+ * @copyright Copyright (c) CommerceGears (https://www.commercegearscommerce.co.uk/)
  */
 declare(strict_types=1);
 
-namespace Softaware\CustomerApproval\Controller\Adminhtml\Customer;
+namespace CommerceGears\CustomerApproval\Controller\Adminhtml\Customer;
 
 use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
@@ -15,14 +15,14 @@ use Magento\Framework\App\Action\HttpPostActionInterface;
 use Magento\Framework\Controller\Result\Redirect;
 use Magento\Framework\Exception\LocalizedException;
 use Magento\Ui\Component\MassAction\Filter;
-use Softaware\CustomerApproval\Api\ApprovalManagementInterface;
+use CommerceGears\CustomerApproval\Api\ApprovalManagementInterface;
 
 /**
  * Mass approve / reject from the customer grid and the approval queue.
  */
 abstract class AbstractMassAction extends Action implements HttpPostActionInterface
 {
-    public const ADMIN_RESOURCE = 'Softaware_CustomerApproval::manage';
+    public const ADMIN_RESOURCE = 'CommerceGears_CustomerApproval::manage';
 
     public function __construct(
         Context $context,
@@ -57,8 +57,8 @@ abstract class AbstractMassAction extends Action implements HttpPostActionInterf
             $this->messageManager->addSuccessMessage($this->getSuccessMessage($done));
         }
         $redirect = $this->resultRedirectFactory->create();
-        if ($this->getRequest()->getParam('namespace') === 'softaware_customerapproval_queue_listing') {
-            return $redirect->setPath('softaware_customerapproval/queue/index');
+        if ($this->getRequest()->getParam('namespace') === 'commercegears_customerapproval_queue_listing') {
+            return $redirect->setPath('commercegears_customerapproval/queue/index');
         }
         return $redirect->setPath('customer/index/index');
     }

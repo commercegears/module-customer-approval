@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
     <router id="admin">
-        <route id="softaware_customerapproval" frontName="softaware_customerapproval">
-            <module name="Softaware_CustomerApproval"/>
+        <route id="commercegears_customerapproval" frontName="commercegears_customerapproval">
+            <module name="CommerceGears_CustomerApproval"/>
         </route>
     </router>
 </config>

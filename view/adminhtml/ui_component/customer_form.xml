@@ -2,8 +2,8 @@
 <form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     <settings>
         <buttons>
-            <button name="softaware_approve" class="Softaware\CustomerApproval\Block\Adminhtml\Edit\ApproveButton"/>
-            <button name="softaware_reject" class="Softaware\CustomerApproval\Block\Adminhtml\Edit\RejectButton"/>
+            <button name="commercegears_approve" class="CommerceGears\CustomerApproval\Block\Adminhtml\Edit\ApproveButton"/>
+            <button name="commercegears_reject" class="CommerceGears\CustomerApproval\Block\Adminhtml\Edit\RejectButton"/>
         </buttons>
     </settings>
 </form>

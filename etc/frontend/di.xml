@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <type name="Magento\Customer\Model\Session">
-        <plugin name="softaware_customerapproval" type="Softaware\CustomerApproval\Plugin\Frontend\CustomerSessionPlugin"/>
+        <plugin name="commercegears_customerapproval" type="CommerceGears\CustomerApproval\Plugin\Frontend\CustomerSessionPlugin"/>
     </type>
     <type name="Magento\Customer\Controller\Account\Confirm">
-        <plugin name="softaware_customerapproval" type="Softaware\CustomerApproval\Plugin\Frontend\ConfirmPlugin"/>
+        <plugin name="commercegears_customerapproval" type="CommerceGears\CustomerApproval\Plugin\Frontend\ConfirmPlugin"/>
     </type>
     <type name="Magento\Customer\Controller\Account\CreatePost">
-        <plugin name="softaware_customerapproval" type="Softaware\CustomerApproval\Plugin\Frontend\CreatePostPlugin"/>
+        <plugin name="commercegears_customerapproval" type="CommerceGears\CustomerApproval\Plugin\Frontend\CreatePostPlugin"/>
     </type>
 </config>

@@ -1,17 +1,17 @@
 <?php
 /**
- * Softaware Customer Approval
+ * CommerceGears Customer Approval
  *
- * @copyright Copyright (c) Softaware Commerce (https://www.softawarecommerce.co.uk/)
+ * @copyright Copyright (c) CommerceGears (https://www.commercegearscommerce.co.uk/)
  */
 declare(strict_types=1);
 
-namespace Softaware\CustomerApproval\Plugin;
+namespace CommerceGears\CustomerApproval\Plugin;
 
 use Magento\Customer\Api\AccountManagementInterface;
 use Magento\Customer\Api\Data\CustomerInterface;
-use Softaware\CustomerApproval\Model\LoginGuard;
-use Softaware\CustomerApproval\Model\NewAccountHandler;
+use CommerceGears\CustomerApproval\Model\LoginGuard;
+use CommerceGears\CustomerApproval\Model\NewAccountHandler;
 
 /**
  * - New accounts (storefront form, checkout, REST, GraphQL...) get their status from the rules.
@@ -75,7 +75,7 @@ class AccountManagementPlugin
     }
 
     /**
-     * @throws \Softaware\CustomerApproval\Exception\NotApprovedException
+     * @throws \CommerceGears\CustomerApproval\Exception\NotApprovedException
      */
     public function afterAuthenticate(AccountManagementInterface $subject, CustomerInterface $result): CustomerInterface
     {

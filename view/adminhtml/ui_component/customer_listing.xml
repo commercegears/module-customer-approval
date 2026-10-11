@@ -2,21 +2,21 @@
 <listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     <listingToolbar name="listing_top">
         <massaction name="listing_massaction">
-            <action name="softaware_approve">
+            <action name="commercegears_approve">
                 <settings>
-                    <url path="softaware_customerapproval/customer/massApprove"/>
-                    <type>softaware_approve</type>
+                    <url path="commercegears_customerapproval/customer/massApprove"/>
+                    <type>commercegears_approve</type>
                     <label translate="true">Approve Account</label>
                 </settings>
             </action>
-            <action name="softaware_reject">
+            <action name="commercegears_reject">
                 <settings>
                     <confirm>
                         <message translate="true">Reject the selected customer accounts? They are signed out and cannot sign in.</message>
                         <title translate="true">Reject Accounts</title>
                     </confirm>
-                    <url path="softaware_customerapproval/customer/massReject"/>
-                    <type>softaware_reject</type>
+                    <url path="commercegears_customerapproval/customer/massReject"/>
+                    <type>commercegears_reject</type>
                     <label translate="true">Reject Account</label>
                 </settings>
             </action>
@@ -24,9 +24,9 @@
     </listingToolbar>
     <columns name="customer_columns">
         <!-- Attribute column (filter, visibility and options come from the attribute); shown as a status badge -->
-        <column name="softaware_approval_status" class="Softaware\CustomerApproval\Ui\Component\Listing\Column\ApprovalStatus" sortOrder="280">
+        <column name="commercegears_approval_status" class="CommerceGears\CustomerApproval\Ui\Component\Listing\Column\ApprovalStatus" sortOrder="280">
             <settings>
-                <options class="Softaware\CustomerApproval\Model\Attribute\Source\Status"/>
+                <options class="CommerceGears\CustomerApproval\Model\Attribute\Source\Status"/>
                 <dataType>select</dataType>
                 <bodyTmpl>ui/grid/cells/html</bodyTmpl>
                 <label translate="true">Approval Status</label>

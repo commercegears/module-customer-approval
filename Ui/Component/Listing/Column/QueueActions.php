@@ -1,18 +1,18 @@
 <?php
 /**
- * Softaware Customer Approval
+ * CommerceGears Customer Approval
  *
- * @copyright Copyright (c) Softaware Commerce (https://www.softawarecommerce.co.uk/)
+ * @copyright Copyright (c) CommerceGears (https://www.commercegearscommerce.co.uk/)
  */
 declare(strict_types=1);
 
-namespace Softaware\CustomerApproval\Ui\Component\Listing\Column;
+namespace CommerceGears\CustomerApproval\Ui\Component\Listing\Column;
 
 use Magento\Framework\UrlInterface;
 use Magento\Framework\View\Element\UiComponent\ContextInterface;
 use Magento\Framework\View\Element\UiComponentFactory;
 use Magento\Ui\Component\Listing\Columns\Column;
-use Softaware\CustomerApproval\Api\ApprovalManagementInterface as Approval;
+use CommerceGears\CustomerApproval\Api\ApprovalManagementInterface as Approval;
 
 class QueueActions extends Column
 {
@@ -37,7 +37,7 @@ class QueueActions extends Column
             if (!$id) {
                 continue;
             }
-            $status = (string)($item['softaware_approval_status_code'] ?? $item['softaware_approval_status'] ?? '');
+            $status = (string)($item['commercegears_approval_status_code'] ?? $item['commercegears_approval_status'] ?? '');
             $actions = [
                 'edit' => [
                     'href' => $this->urlBuilder->getUrl('customer/index/edit', ['id' => $id]),
@@ -46,7 +46,7 @@ class QueueActions extends Column
             ];
             if ($status !== Approval::STATUS_APPROVED) {
                 $actions['approve'] = [
-                    'href' => $this->urlBuilder->getUrl('softaware_customerapproval/customer/approve', ['id' => $id, 'back' => 'queue']),
+                    'href' => $this->urlBuilder->getUrl('commercegears_customerapproval/customer/approve', ['id' => $id, 'back' => 'queue']),
                     'label' => __('Approve'),
                     // The grid only posts actions that have a confirm (or callback); without one it opens the
                     // link with GET, which the POST-only controller answers with a 404.
@@ -59,7 +59,7 @@ class QueueActions extends Column
             }
             if ($status !== Approval::STATUS_REJECTED) {
                 $actions['reject'] = [
-                    'href' => $this->urlBuilder->getUrl('softaware_customerapproval/customer/reject', ['id' => $id, 'back' => 'queue']),
+                    'href' => $this->urlBuilder->getUrl('commercegears_customerapproval/customer/reject', ['id' => $id, 'back' => 'queue']),
                     'label' => __('Reject'),
                     'post' => true,
                     'confirm' => [

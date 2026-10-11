@@ -1,14 +1,14 @@
 <?php
 /**
- * Softaware Customer Approval
+ * CommerceGears Customer Approval
  *
- * @copyright Copyright (c) Softaware Commerce (https://www.softawarecommerce.co.uk/)
+ * @copyright Copyright (c) CommerceGears (https://www.commercegearscommerce.co.uk/)
  */
 declare(strict_types=1);
 
-namespace Softaware\CustomerApproval\Block\Adminhtml\Edit;
+namespace CommerceGears\CustomerApproval\Block\Adminhtml\Edit;
 
-use Softaware\CustomerApproval\Api\ApprovalManagementInterface as Approval;
+use CommerceGears\CustomerApproval\Api\ApprovalManagementInterface as Approval;
 
 class RejectButton extends ApprovalButtonData
 {
@@ -21,7 +21,7 @@ class RejectButton extends ApprovalButtonData
         if ($status === null || $status === Approval::STATUS_REJECTED) {
             return [];
         }
-        return $this->buildButton((string)__('Reject'), 'softaware-reject', 'reject', [
+        return $this->buildButton((string)__('Reject'), 'commercegears-reject', 'reject', [
             'mode' => 'reject',
             'title' => (string)__('Reject Account'),
             'message' => (string)__('Reject this account? The customer is signed out and cannot sign in.'),

@@ -1,16 +1,16 @@
 <?php
 /**
- * Softaware Customer Approval
+ * CommerceGears Customer Approval
  *
- * @copyright Copyright (c) Softaware Commerce (https://www.softawarecommerce.co.uk/)
+ * @copyright Copyright (c) CommerceGears (https://www.commercegearscommerce.co.uk/)
  */
 declare(strict_types=1);
 
-namespace Softaware\CustomerApproval\Ui\DataProvider;
+namespace CommerceGears\CustomerApproval\Ui\DataProvider;
 
 use Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider;
-use Softaware\CustomerApproval\Api\ApprovalManagementInterface as Approval;
-use Softaware\CustomerApproval\Model\ResourceModel\StatusStorage;
+use CommerceGears\CustomerApproval\Api\ApprovalManagementInterface as Approval;
+use CommerceGears\CustomerApproval\Model\ResourceModel\StatusStorage;
 
 /**
  * Approval queue: the customer grid index limited to pending and rejected accounts.

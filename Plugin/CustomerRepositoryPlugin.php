@@ -1,19 +1,19 @@
 <?php
 /**
- * Softaware Customer Approval
+ * CommerceGears Customer Approval
  *
- * @copyright Copyright (c) Softaware Commerce (https://www.softawarecommerce.co.uk/)
+ * @copyright Copyright (c) CommerceGears (https://www.commercegearscommerce.co.uk/)
  */
 declare(strict_types=1);
 
-namespace Softaware\CustomerApproval\Plugin;
+namespace CommerceGears\CustomerApproval\Plugin;
 
 use Magento\Customer\Api\CustomerRepositoryInterface;
 use Magento\Customer\Api\Data\CustomerInterface;
-use Softaware\CustomerApproval\Api\ApprovalManagementInterface as Approval;
-use Softaware\CustomerApproval\Model\NewAccountHandler;
-use Softaware\CustomerApproval\Model\ResourceModel\StatusStorage;
-use Softaware\CustomerApproval\Model\TrustedContext;
+use CommerceGears\CustomerApproval\Api\ApprovalManagementInterface as Approval;
+use CommerceGears\CustomerApproval\Model\NewAccountHandler;
+use CommerceGears\CustomerApproval\Model\ResourceModel\StatusStorage;
+use CommerceGears\CustomerApproval\Model\TrustedContext;
 
 /**
  * - New customers saved directly through the repository (social login, other modules) get their status from the

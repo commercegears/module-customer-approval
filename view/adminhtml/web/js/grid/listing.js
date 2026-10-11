@@ -1,5 +1,5 @@
 /**
- * Softaware Customer Approval: approval queue grid with its own "nothing found" text instead of Magento's
+ * CommerceGears Customer Approval: approval queue grid with its own "nothing found" text instead of Magento's
  * generic "We couldn't find any records." (filters or search applied, or the last account was just handled).
  */
 define([
@@ -10,7 +10,7 @@ define([
 
     return Listing.extend({
         defaults: {
-            template: 'Softaware_CustomerApproval/grid/listing',
+            template: 'CommerceGears_CustomerApproval/grid/listing',
             appliedFilters: {},
             searchQuery: '',
             imports: {

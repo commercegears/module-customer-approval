@@ -3,10 +3,10 @@
     <acl>
         <resources>
             <resource id="Magento_Backend::admin">
-                <resource id="Softaware_Core::core">
-                    <resource id="Softaware_CustomerApproval::approval" title="Customer Approval" translate="title" sortOrder="45">
-                        <resource id="Softaware_CustomerApproval::manage" title="Approve and Reject Customers" translate="title" sortOrder="20"/>
-                        <resource id="Softaware_CustomerApproval::config" title="Settings" translate="title" sortOrder="30"/>
+                <resource id="CommerceGears_Core::core">
+                    <resource id="CommerceGears_CustomerApproval::approval" title="Customer Approval" translate="title" sortOrder="45">
+                        <resource id="CommerceGears_CustomerApproval::manage" title="Approve and Reject Customers" translate="title" sortOrder="20"/>
+                        <resource id="CommerceGears_CustomerApproval::config" title="Settings" translate="title" sortOrder="30"/>
                     </resource>
                 </resource>
             </resource>

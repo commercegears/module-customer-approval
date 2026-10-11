@@ -2,9 +2,9 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="customer.form.register.fields.before">
-            <block name="softaware_customerapproval_register_notice" template="Softaware_CustomerApproval::register-notice.phtml" before="-">
+            <block name="commercegears_customerapproval_register_notice" template="CommerceGears_CustomerApproval::register-notice.phtml" before="-">
                 <arguments>
-                    <argument name="view_model" xsi:type="object">Softaware\CustomerApproval\ViewModel\RegistrationNotice</argument>
+                    <argument name="view_model" xsi:type="object">CommerceGears\CustomerApproval\ViewModel\RegistrationNotice</argument>
                 </arguments>
             </block>
         </referenceContainer>

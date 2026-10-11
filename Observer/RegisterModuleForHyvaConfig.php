@@ -1,12 +1,12 @@
 <?php
 /**
- * Softaware Customer Approval
+ * CommerceGears Customer Approval
  *
- * @copyright Copyright (c) Softaware Commerce (https://www.softawarecommerce.co.uk/)
+ * @copyright Copyright (c) CommerceGears (https://www.commercegearscommerce.co.uk/)
  */
 declare(strict_types=1);
 
-namespace Softaware\CustomerApproval\Observer;
+namespace CommerceGears\CustomerApproval\Observer;
 
 use Magento\Framework\Component\ComponentRegistrar;
 use Magento\Framework\Event\Observer;
@@ -26,7 +26,7 @@ class RegisterModuleForHyvaConfig implements ObserverInterface
     {
         $config = $observer->getData('config');
         $extensions = $config->hasData('extensions') ? $config->getData('extensions') : [];
-        $path = (string)$this->componentRegistrar->getPath(ComponentRegistrar::MODULE, 'Softaware_CustomerApproval');
+        $path = (string)$this->componentRegistrar->getPath(ComponentRegistrar::MODULE, 'CommerceGears_CustomerApproval');
         $extensions[] = ['src' => substr($path, strlen(BP) + 1)];
         $config->setData('extensions', $extensions);
     }

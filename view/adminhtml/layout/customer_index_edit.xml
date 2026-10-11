@@ -2,7 +2,7 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="content">
-            <block class="Softaware\CustomerApproval\Block\Adminhtml\Customer\StatusNotice" name="softaware_customerapproval_status_notice" before="-"/>
+            <block class="CommerceGears\CustomerApproval\Block\Adminhtml\Customer\StatusNotice" name="commercegears_customerapproval_status_notice" before="-"/>
         </referenceContainer>
     </body>
 </page>

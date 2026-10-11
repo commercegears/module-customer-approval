@@ -1,26 +1,26 @@
 <?php
 /**
- * Softaware Customer Approval
+ * CommerceGears Customer Approval
  *
- * @copyright Copyright (c) Softaware Commerce (https://www.softawarecommerce.co.uk/)
+ * @copyright Copyright (c) CommerceGears (https://www.commercegearscommerce.co.uk/)
  */
 declare(strict_types=1);
 
-namespace Softaware\CustomerApproval\Controller\Adminhtml\Customer;
+namespace CommerceGears\CustomerApproval\Controller\Adminhtml\Customer;
 
 use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
 use Magento\Framework\App\Action\HttpPostActionInterface;
 use Magento\Framework\Controller\Result\Redirect;
 use Magento\Framework\Exception\LocalizedException;
-use Softaware\CustomerApproval\Api\ApprovalManagementInterface;
+use CommerceGears\CustomerApproval\Api\ApprovalManagementInterface;
 
 /**
  * Single-customer approve / reject / set pending, posted from the customer edit page buttons.
  */
 abstract class AbstractAction extends Action implements HttpPostActionInterface
 {
-    public const ADMIN_RESOURCE = 'Softaware_CustomerApproval::manage';
+    public const ADMIN_RESOURCE = 'CommerceGears_CustomerApproval::manage';
 
     public function __construct(
         Context $context,
@@ -41,7 +41,7 @@ abstract class AbstractAction extends Action implements HttpPostActionInterface
         }
         $redirect = $this->resultRedirectFactory->create();
         if ($this->getRequest()->getParam('back') === 'queue') {
-            return $redirect->setPath('softaware_customerapproval/queue/index');
+            return $redirect->setPath('commercegears_customerapproval/queue/index');
         }
         return $redirect->setPath('customer/index/edit', ['id' => $customerId]);
     }

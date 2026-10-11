@@ -1,18 +1,18 @@
 <?php
 /**
- * Softaware Customer Approval
+ * CommerceGears Customer Approval
  *
- * @copyright Copyright (c) Softaware Commerce (https://www.softawarecommerce.co.uk/)
+ * @copyright Copyright (c) CommerceGears (https://www.commercegearscommerce.co.uk/)
  */
 declare(strict_types=1);
 
-namespace Softaware\CustomerApproval\Plugin\Admin;
+namespace CommerceGears\CustomerApproval\Plugin\Admin;
 
 use Magento\Backend\Block\AnchorRenderer;
 use Magento\Backend\Block\Menu;
 use Magento\Backend\Model\Menu\Item;
 use Magento\Framework\AuthorizationInterface;
-use Softaware\CustomerApproval\Model\PendingCounter;
+use CommerceGears\CustomerApproval\Model\PendingCounter;
 
 /**
  * Shows the number of accounts waiting for approval next to the "Approval Queue" menu item.
@@ -20,7 +20,7 @@ use Softaware\CustomerApproval\Model\PendingCounter;
  */
 class MenuCountPlugin
 {
-    public const MENU_ID = 'Softaware_CustomerApproval::queue';
+    public const MENU_ID = 'CommerceGears_CustomerApproval::queue';
 
     public function __construct(
         private readonly PendingCounter $pendingCounter,
@@ -34,8 +34,8 @@ class MenuCountPlugin
      */
     public function afterGetCacheKeyInfo(Menu $subject, array $result): array
     {
-        if ($this->authorization->isAllowed('Softaware_CustomerApproval::manage')) {
-            $result['softaware_customerapproval_pending'] = $this->pendingCounter->get();
+        if ($this->authorization->isAllowed('CommerceGears_CustomerApproval::manage')) {
+            $result['commercegears_customerapproval_pending'] = $this->pendingCounter->get();
         }
         return $result;
     }

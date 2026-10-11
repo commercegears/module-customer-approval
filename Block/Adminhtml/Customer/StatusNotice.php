@@ -1,24 +1,24 @@
 <?php
 /**
- * Softaware Customer Approval
+ * CommerceGears Customer Approval
  *
- * @copyright Copyright (c) Softaware Commerce (https://www.softawarecommerce.co.uk/)
+ * @copyright Copyright (c) CommerceGears (https://www.commercegearscommerce.co.uk/)
  */
 declare(strict_types=1);
 
-namespace Softaware\CustomerApproval\Block\Adminhtml\Customer;
+namespace CommerceGears\CustomerApproval\Block\Adminhtml\Customer;
 
 use Magento\Backend\Block\Template;
 use Magento\Backend\Block\Template\Context;
-use Softaware\CustomerApproval\Api\ApprovalManagementInterface as Approval;
-use Softaware\CustomerApproval\Model\ResourceModel\StatusStorage;
+use CommerceGears\CustomerApproval\Api\ApprovalManagementInterface as Approval;
+use CommerceGears\CustomerApproval\Model\ResourceModel\StatusStorage;
 
 /**
  * Notice above the customer edit form when the account is pending or rejected.
  */
 class StatusNotice extends Template
 {
-    protected $_template = 'Softaware_CustomerApproval::customer/status-notice.phtml';
+    protected $_template = 'CommerceGears_CustomerApproval::customer/status-notice.phtml';
 
     public function __construct(
         Context $context,
@@ -45,7 +45,7 @@ class StatusNotice extends Template
 
     protected function _toHtml(): string
     {
-        if (!$this->_authorization->isAllowed('Softaware_CustomerApproval::manage') || $this->getStatus() === null) {
+        if (!$this->_authorization->isAllowed('CommerceGears_CustomerApproval::manage') || $this->getStatus() === null) {
             return '';
         }
         return parent::_toHtml();

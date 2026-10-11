@@ -2,24 +2,24 @@
 <listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     <argument name="data" xsi:type="array">
         <item name="js_config" xsi:type="array">
-            <item name="provider" xsi:type="string">softaware_customerapproval_queue_listing.softaware_customerapproval_queue_listing_data_source</item>
+            <item name="provider" xsi:type="string">commercegears_customerapproval_queue_listing.commercegears_customerapproval_queue_listing_data_source</item>
         </item>
     </argument>
     <settings>
-        <spinner>softaware_customerapproval_queue_columns</spinner>
+        <spinner>commercegears_customerapproval_queue_columns</spinner>
         <deps>
-            <dep>softaware_customerapproval_queue_listing.softaware_customerapproval_queue_listing_data_source</dep>
+            <dep>commercegears_customerapproval_queue_listing.commercegears_customerapproval_queue_listing_data_source</dep>
         </deps>
     </settings>
-    <dataSource name="softaware_customerapproval_queue_listing_data_source" component="Magento_Ui/js/grid/provider">
+    <dataSource name="commercegears_customerapproval_queue_listing_data_source" component="Magento_Ui/js/grid/provider">
         <settings>
             <storageConfig>
                 <param name="indexField" xsi:type="string">entity_id</param>
             </storageConfig>
             <updateUrl path="mui/index/render"/>
         </settings>
-        <aclResource>Softaware_CustomerApproval::manage</aclResource>
-        <dataProvider class="Softaware\CustomerApproval\Ui\DataProvider\QueueDataProvider" name="softaware_customerapproval_queue_listing_data_source">
+        <aclResource>CommerceGears_CustomerApproval::manage</aclResource>
+        <dataProvider class="CommerceGears\CustomerApproval\Ui\DataProvider\QueueDataProvider" name="commercegears_customerapproval_queue_listing_data_source">
             <settings>
                 <requestFieldName>id</requestFieldName>
                 <primaryFieldName>entity_id</primaryFieldName>
@@ -37,7 +37,7 @@
         <massaction name="listing_massaction">
             <action name="approve">
                 <settings>
-                    <url path="softaware_customerapproval/customer/massApprove"/>
+                    <url path="commercegears_customerapproval/customer/massApprove"/>
                     <type>approve</type>
                     <label translate="true">Approve</label>
                 </settings>
@@ -48,7 +48,7 @@
                         <message translate="true">Reject the selected customer accounts? They cannot sign in. To add a reason, use the Reject button on the customer page.</message>
                         <title translate="true">Reject Accounts</title>
                     </confirm>
-                    <url path="softaware_customerapproval/customer/massReject"/>
+                    <url path="commercegears_customerapproval/customer/massReject"/>
                     <type>reject</type>
                     <label translate="true">Reject</label>
                 </settings>
@@ -56,7 +56,7 @@
         </massaction>
         <paging name="listing_paging"/>
     </listingToolbar>
-    <columns name="softaware_customerapproval_queue_columns" component="Softaware_CustomerApproval/js/grid/listing">
+    <columns name="commercegears_customerapproval_queue_columns" component="CommerceGears_CustomerApproval/js/grid/listing">
         <selectionsColumn name="ids">
             <settings>
                 <indexField>entity_id</indexField>
@@ -83,16 +83,16 @@
                 <label translate="true">Email</label>
             </settings>
         </column>
-        <column name="softaware_approval_status" class="Softaware\CustomerApproval\Ui\Component\Listing\Column\ApprovalStatus" sortOrder="40">
+        <column name="commercegears_approval_status" class="CommerceGears\CustomerApproval\Ui\Component\Listing\Column\ApprovalStatus" sortOrder="40">
             <settings>
-                <options class="Softaware\CustomerApproval\Model\Attribute\Source\Status"/>
+                <options class="CommerceGears\CustomerApproval\Model\Attribute\Source\Status"/>
                 <filter>select</filter>
                 <dataType>select</dataType>
                 <bodyTmpl>ui/grid/cells/html</bodyTmpl>
                 <label translate="true">Approval Status</label>
             </settings>
         </column>
-        <column name="softaware_approval_reason" sortOrder="50">
+        <column name="commercegears_approval_reason" sortOrder="50">
             <settings>
                 <filter>text</filter>
                 <label translate="true">Rejection Reason</label>
@@ -138,7 +138,7 @@
                 <sorting>desc</sorting>
             </settings>
         </column>
-        <actionsColumn name="actions" class="Softaware\CustomerApproval\Ui\Component\Listing\Column\QueueActions" sortOrder="200">
+        <actionsColumn name="actions" class="CommerceGears\CustomerApproval\Ui\Component\Listing\Column\QueueActions" sortOrder="200">
             <settings>
                 <indexField>entity_id</indexField>
             </settings>

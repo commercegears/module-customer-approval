@@ -1,12 +1,12 @@
 <?php
 /**
- * Softaware Customer Approval
+ * CommerceGears Customer Approval
  *
- * @copyright Copyright (c) Softaware Commerce (https://www.softawarecommerce.co.uk/)
+ * @copyright Copyright (c) CommerceGears (https://www.commercegearscommerce.co.uk/)
  */
 declare(strict_types=1);
 
-namespace Softaware\CustomerApproval\Model\ResourceModel;
+namespace CommerceGears\CustomerApproval\Model\ResourceModel;
 
 use Magento\Customer\Api\CustomerMetadataInterface;
 use Magento\Eav\Model\Config as EavConfig;
@@ -19,8 +19,8 @@ use Magento\Framework\App\ResourceConnection;
  */
 class StatusStorage
 {
-    public const STATUS_ATTRIBUTE = 'softaware_approval_status';
-    public const REASON_ATTRIBUTE = 'softaware_approval_reason';
+    public const STATUS_ATTRIBUTE = 'commercegears_approval_status';
+    public const REASON_ATTRIBUTE = 'commercegears_approval_reason';
 
     /** @var array<string, int> */
     private array $attributeIds = [];

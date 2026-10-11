@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.0.0 (2026-10-11)
+- Improvement: renamed to CommerceGears (new Composer package, admin menu and settings paths)
+
 ## 1.2.4 (2026-10-11)
 - Improvement: the approval queue has its own "nothing found" texts for a search or filter without results.
 - Improvement: storefront messages and auto-approve domains are checked when saved (length, no HTML).
@@ -11,7 +14,7 @@
 - New: product listing, FAQ and user guide.
 
 ## 1.2.1 (2026-10-07)
-- Fix: the README states the correct Softaware Core version.
+- Fix: the README states the correct CommerceGears Core version.
 
 ## 1.2.0 (2026-10-07)
 - New: keyword search on the approval queue.
@@ -20,7 +23,7 @@
 - Improvement: settings explain every field and its default; recipients are checked as email addresses.
 
 ## 1.1.0 (2026-10-06)
-- Improvement: requires Softaware Core instead of Softaware Base; menu and permissions move under "Softaware".
+- Improvement: requires CommerceGears Core instead of CommerceGears Base; menu and permissions move under "CommerceGears".
 
 ## 1.0.1 (2026-10-06)
 - Fix: accounts created by other modules (for example social sign-up) now go through approval too.
