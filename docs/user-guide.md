@@ -24,7 +24,7 @@ admin demo shows the Approval Queue, the customer page buttons and the settings.
 ## 2. Installation
 
 Install with Composer from repo.commercegears.com. Your access keys and the full set-up are described at
-https://commercegears.com/shop/composer-access/.
+https://commercegears.com/composer-access/.
 
 ```bash
 composer config repositories.commercegears composer https://repo.commercegears.com
