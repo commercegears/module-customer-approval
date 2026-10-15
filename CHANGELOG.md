@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.1.0 (2026-10-15)
+New: German translation of the customer-facing texts and e-mails.
+
 ## 2.0.2 (2026-10-12)
 - Improvement: compatible with Magento 2.4.6 (PHP 8.2).
 
