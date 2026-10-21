@@ -38,3 +38,7 @@ No. The approval attributes are not in any customer form, and a status sent with
 
 **Does it hide prices from visitors who are not signed in?**
 No, that is not part of this module.
+
+**Is Customer Approval free?**
+Yes. Customer Approval is free to download from commercegears.com and is installed with Composer like our other modules.
+It needs `commercegears/module-core`, which Composer installs automatically.

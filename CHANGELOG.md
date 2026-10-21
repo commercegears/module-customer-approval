@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.1.1 (2026-10-21)
+- Improvement: the module is now free.
+
 ## 2.1.0 (2026-10-15)
 - New: German translation of the customer-facing texts and e-mails.
 
